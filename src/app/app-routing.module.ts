@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'simple-form',
     loadChildren: () => import('./simple-form/simple-form.module').then( m => m.SimpleFormPageModule)
+  },  {
+    path: 'trial-page',
+    loadChildren: () => import('./trial-page/trial-page.module').then( m => m.TrialPagePageModule)
   },
+
 ];
 
 @NgModule({
