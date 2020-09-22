@@ -39,8 +39,8 @@ ion-item{
 }
 
 ion-checkbox{
-  background: #a04eff;
-  border-radius: 5px;
+  border: #a04eff ;
+  border-radius: 0px;
   --height: 10px;
   --width: 10px;
   --checkmark-color:white;
@@ -60,7 +60,6 @@ ion-checkbox{
   margin-bottom: 1px;
   font-family: 'Nunito', sans-serif;
   text-transform: none;
-
 }
 
 .googlebutton{
