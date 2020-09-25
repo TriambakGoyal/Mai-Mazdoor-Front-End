@@ -36,6 +36,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: "job-details",
+        children: [
+          {
+            path: "",
+            loadChildren: () => import('./job-details/job-details.module').then( m => m.JobDetailsPageModule)
+          }
+        ]
+      },
+      {
         path: "",
         redirectTo: "home-tab",
         pathMatch: "full"
@@ -47,10 +56,7 @@ const routes: Routes = [
     redirectTo: "home-tab",
     pathMatch: "full"
   },
-  {
-    path: 'job-details',
-    loadChildren: () => import('./job-details/job-details.module').then( m => m.JobDetailsPageModule)
-  },
+  
 
 ];
 
