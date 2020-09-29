@@ -1,29 +1,56 @@
-.profile-item {
-    margin-top: 30px;
-    text-align: center;
-  }
+ion-content{
+  --background: none;
+    background-image: url('/assets/bg-img.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+ion-icon{
+  margin-left: 10px;
+  color:#116e8d;
+}
+
+ion-label{
+  margin-left: 50px;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ion-button {
+  color: black;
+  border-radius: 50%;
+  font-family: 'Nunito', sans-serif;
+}
   
-  .profile-picture {
-    border: 1px solid rgba(0, 0, 0, 0.25);
+  .profile-pic {
+    position: relative;
+    border: 5px solid #079ed1;
     padding: 3px;
     border-radius: 100%;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    box-shadow: black;
     margin: 0 auto;
     width: 128px;
     height: 128px;
     overflow: hidden;
+    top: 40px;
   }
   
-  .profile-picture img {
+  .profile-pic img {
     width: 128px;
     border-radius: 100%;
   }
   
-  .profile-name {
-    padding-top: 20px;
-    font-size: x-large !important;
-    font-weight: bold !important;
-    text-transform: capitalize;
-  }
+ .info {
+  font-family: 'Nunito', sans-serif;
+  margin-top: 50px;
+ }
+
+ 
