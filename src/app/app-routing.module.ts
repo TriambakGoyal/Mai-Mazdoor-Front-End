@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'signup',
     pathMatch: 'full'
   },
   {
@@ -23,6 +23,13 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./labor-dashboard/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+
+  
+
 
 
 ];
