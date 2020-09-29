@@ -21,27 +21,19 @@
 
 
 <div>
-  <ion-card>
+  <ion-card *ngFor="let job of job_list">
     <ion-card-header>
-      <ion-card-subtitle><ion-icon name="location"></ion-icon>Jorhat</ion-card-subtitle>
-      <ion-card-title>Building Construction</ion-card-title>
+      <ion-card-subtitle><ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}</ion-card-subtitle>
+      <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      <p></p>
+      <p>{{job.job_description}}</p>
+      <p>{{job.job_start_date}}<span>-</span>{{job.job_end_date}}</p>
       <p><ion-button size="small" color="success" fill="outline" routerLink="/tabs/job-details" routerDirection="root">Learn More</ion-button></p>
     </ion-card-content>
   </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle><ion-icon name="location"></ion-icon>Mumbai</ion-card-subtitle>
-      <ion-card-title>Transport</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <p></p>
-      <p><ion-button size="small" color="success" fill="outline">Learn More</ion-button></p>
-    </ion-card-content>
-  </ion-card>
+
+
 </div>
 </ion-content>
