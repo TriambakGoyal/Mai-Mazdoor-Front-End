@@ -2,19 +2,12 @@
   <ion-grid class="ion-content-center ion-no-padding" style="margin-top: 0%;">
     <ion-row> <ion-col size-md="5" offset-md="3.5"><app-slide class="ion-no-padding"></app-slide></ion-col>
     </ion-row>
-    <!-- <ion-row class="ion-justify-content-center">
-      <ion-col size-md="5" offset-md="3.5" style="align-content: center;" >
-          <ion-button fill="clear" color ="dark" size = "small">
-            <b><p class="signin-text">LOGIN</p></b>
-          </ion-button></ion-col> -->
-    <!-- </ion-row> -->
     <ion-row class="ion-no-padding ion-no-margin">
       <ion-col size-md="5" offset-md="3.5" class="ion-no-padding ion-no-border ion-no-margin">
         <!-- SIGN IN DETAILS -->
         <form>
         <ion-card class="ion-no-border" style="border-style: none;">
           <ion-card-content class="ion-no-border ion-no-margin" style="border-style: none;">
-            <!-- <b><p class="signin-text">WELCOME</p></b> -->
 
             <!-- EMAIL ID -->
             <ion-grid>
@@ -22,7 +15,7 @@
                 <ion-col>
                   <ion-item color='light' style="border-radius: 100px;">
                     <ion-label position="floating">Mobile No.</ion-label>
-                    <ion-input type="email"></ion-input>
+                    <ion-input type="number"></ion-input>
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -68,7 +61,8 @@
                 </ion-row>
               </ion-grid>
               <ion-button class="actionbutton" expand='full' fill="clear" style="text-transform: none;">LOGIN</ion-button>
-              
+              <br><div style="align-content: center; text-align: center; color: #a8a8a8; font-size: small; "><b><p >New User? <span style="color:  turquoise;" routerLink="/signup">Register</span></p></b></div>
+
             </ion-card-content>
             
           </ion-card>
