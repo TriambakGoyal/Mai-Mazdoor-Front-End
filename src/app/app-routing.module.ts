@@ -8,13 +8,30 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'signup',
     pathMatch: 'full'
   },
   {
     path: 'simple-form',
     loadChildren: () => import('./simple-form/simple-form.module').then( m => m.SimpleFormPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./labor-dashboard/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+
+  
+
+
+
 ];
 
 @NgModule({
