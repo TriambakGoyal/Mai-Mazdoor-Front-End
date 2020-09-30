@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  constructor(private http: HttpClient,
+    private router: Router) { }
+  login(form) {
+    console.log(form.value)
+    this.http.post("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
+      res => {
+        console.log(res)
+      }
+    )
+  }
 }
