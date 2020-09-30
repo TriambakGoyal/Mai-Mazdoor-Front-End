@@ -7,7 +7,10 @@
           </app-avtar>
         </ion-col>
         <ion-col>
-          <ion-icon name="search-outline"></ion-icon>
+          <ion-button (click)="showModal()" fill="clear" style="height:100%; float:right;" >
+            <ion-icon name="search-outline"></ion-icon>
+
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -35,7 +38,7 @@
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
           <ion-card *ngFor="let job of job_list">
-            <ion-card-header>
+            <ion-card-header >
               <ion-card-subtitle>
                 <ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}
               </ion-card-subtitle>
