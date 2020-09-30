@@ -23,18 +23,6 @@ import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcont
 })
 export class HomeTabPageModule {
 
-  constructor(private modalCtrl : ModalController){}
 
-  async showModal(){
-      const modal =await this.modalCtrl.create({
-        component:  ModalcontentComponent
-      });
-      await modal.present();
-
-    }
-  hello()
-  {
-    console.log("hello");
-  }
   
 }

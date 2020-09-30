@@ -1,6 +1,8 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 import { __values } from 'tslib';
 
 export interface IJob {
@@ -25,10 +27,19 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
+  
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private modalCtrl : ModalController) {}
 
   job_list: IJob[];
+  
+  async showModal(){
+    const modal =await this.modalCtrl.create({
+      component:  ModalcontentComponent
+    });
+    await modal.present();
+
+  }
 
   ngOnInit() {
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/").subscribe(

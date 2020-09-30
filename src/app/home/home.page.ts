@@ -12,7 +12,7 @@ export class HomePage {
   constructor(private http: HttpClient,
     private router: Router) { }
   login(form) {
-    console.log(form.value);
+    console.log(form.value["phno"]);
     // this.http.post("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
     //   res => {
     //     console.log(res)

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ModalController} from "@ionic/angular";
 @Component({
   selector: 'app-modalcontent',
   templateUrl: './modalcontent.component.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalcontentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl : ModalController) { }
+  async close(){
+    await this.modalCtrl.dismiss();
+  }
 
   ngOnInit() {}
 
