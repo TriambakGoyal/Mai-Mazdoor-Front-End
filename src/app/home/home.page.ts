@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -7,16 +7,19 @@ import { Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   constructor(private http: HttpClient,
     private router: Router) { }
+    ngOnInit() {
+    }
   login(form) {
-    console.log(form.value)
+    console.log(form.value);
     this.http.post("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
       res => {
         console.log(res)
       }
     )
+    this.router.navigate(['/tabs/home-tab']);
   }
 }

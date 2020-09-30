@@ -41,6 +41,12 @@
               </ion-card-subtitle>
               <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}</ion-card-title>
             </ion-card-header>
+            <ion-card-content>
+              <p>{{job.job_description}}</p>
+              <p>Starts At : {{job.job_start_date}}</p>
+              <p>Ends At : {{job.job_end_date}}</p>
+              <p>Rating : {{job.contractor.contractor_rating}}</p>
+            </ion-card-content>
           </ion-card>
         </div>
       </ion-col>
