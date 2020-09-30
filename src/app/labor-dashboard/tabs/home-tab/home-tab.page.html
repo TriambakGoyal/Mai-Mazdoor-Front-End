@@ -1,58 +1,51 @@
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-title>home-tab</ion-title>
+<ion-header >
+  <ion-toolbar size-md="5" offset-md="4" style="display: flex; justify-content: space-around;">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <app-avtar>
+          </app-avtar>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
   </ion-toolbar>
-</ion-header>-->
+</ion-header>
 
 <ion-content>
+<!--   
   <div class="slider" style="border-color: slategray; box-shadow: slategray; background-color: rgb(241, 240, 236);">
-  <ion-slides pager=true>
-    <ion-slide>
-      
+    <ion-slides pager=true>
+      <ion-slide>
+        
         <ion-img src=".../.././assets/mai_mazdoor_logo2.png"></ion-img>
-     
-    </ion-slide>
+        
+      </ion-slide>
+      
+      <ion-slide>
+        <h1>Test1</h1>
+      </ion-slide>
+    </ion-slides>
+  </div> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="5" offset-md="4">
+        <div class="feeds">
+          <ion-card *ngFor="let job of job_list">
+            <ion-card-header>
+              <ion-card-subtitle>
+                <ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}
+              </ion-card-subtitle>
+              <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <ion-slide>
-      <h1>Test1</h1>
-    </ion-slide>
-  </ion-slides>
-</div>
-
-<div>
-  <ion-card *ngFor="let job of job_list">
-    <ion-card-header>
-      <ion-card-subtitle><ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}</ion-card-subtitle>
-      <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}</ion-card-title>
-      </ion-card-header>
-      </ion-card>
-<div class="feeds">
-  <ion-card>
-    <div class="feeds">
-    <ion-card-header>
-      <ion-card-subtitle><ion-icon name="location"></ion-icon>Jorhat</ion-card-subtitle>
-      <ion-card-title >Building Construction</ion-card-title>
-    </ion-card-header>
   
-    <ion-card-content>
-      <p>{{job.job_description}}</p>
-      <p>{{job.job_start_date}}<span>-</span>{{job.job_end_date}}</p>
-      <p><ion-button size="small" color="success" fill="outline" routerLink="/tabs/job-details" routerDirection="root">Learn More</ion-button></p>
-    </ion-card-content>
-  </div>
-  </ion-card>
-  <ion-card>
-    <div class="feeds">
-   <ion-card-header>
-      <ion-card-subtitle><ion-icon name="location"></ion-icon>Mumbai</ion-card-subtitle>
-      <ion-card-title>Transport</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <p></p>
-      <p><ion-button size="small" color="success" fill="outline">Learn More</ion-button></p>
-    </ion-card-content>
-  </div>
-  </ion-card>
-</div>
 </ion-content>

@@ -11,5 +11,8 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {
   }
+  register(form){
+    console.log(form.value)
 
+  }
 }

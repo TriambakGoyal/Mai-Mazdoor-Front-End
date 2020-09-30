@@ -9,8 +9,7 @@
     <ion-row class="ion-no-padding ion-no-margin">
       <ion-col size-md="5" offset-md="3.5" class="ion-no-padding ion-no-border ion-no-margin">
         <!-- SIGN IN DETAILS -->
-        <form>
-          <!-- <ion-card class="ion-no-border" style="border-style: none;">
+        <form  #form="ngForm" (ngSubmit)="register(form)">          <!-- <ion-card class="ion-no-border" style="border-style: none;">
             <ion-card-content class="ion-no-border ion-no-margin ion-no-padding" style="border-style: none;"> -->
               
               <!-- EMAIL ID -->
@@ -19,7 +18,7 @@
                   <ion-col>
                     <ion-item color='light' style="border-radius: 100px;">
                       <ion-label position="floating" style="">Full Name</ion-label>
-                      <ion-input type="text" style=""></ion-input>
+                      <ion-input name="name" type="text" style="" ngModel required></ion-input>
                     </ion-item>
                   </ion-col>
                 </ion-row>
@@ -28,7 +27,7 @@
                   <ion-col>
                     <ion-item color='light' style="border-radius: 100px;">
                       <ion-label position="floating">Mobile No.</ion-label>
-                      <ion-input type="number"></ion-input>
+                      <ion-input type="number" name="mob_number" ngModel required></ion-input>
                     </ion-item>
                   </ion-col>
                 </ion-row>
@@ -42,7 +41,7 @@
                         <ion-label position="floating">Password</ion-label>
                         <div style="display: flex; justify-content:space-between;width:100%;">
                           <!-- PASSWORD INPUT -->
-                          <ion-input type="password"></ion-input>
+                          <ion-input type="password" name="auth" ngModel required></ion-input>
                         </div>
                         
                       </div>
@@ -62,7 +61,7 @@
                         <ion-label position="floating">Confirm Password</ion-label>
                         <div style="display: flex; justify-content:space-between;width:100%;">
                           <!-- PASSWORD INPUT -->
-                          <ion-input type="password"></ion-input>
+                          <ion-input type="password" name="auth2" ngModel required></ion-input>
                         </div>
                         
                       </div>
@@ -75,7 +74,7 @@
               </ion-grid>
               <br>
               
-              <ion-button class="actionbutton" expand='full' fill="clear" style="text-transform: none;">REGISTER</ion-button>
+              <ion-button type="submit" [disabled]="form.invalid" class="actionbutton" expand='full' fill="clear" style="text-transform: none;">REGISTER</ion-button>
               <br><div style="align-content: center; text-align: center; color: #a8a8a8; font-size: small; "><b><p >Already Registered? <span style="color:  turquoise;" routerLink="/home">Login</span></p></b></div>
               
             <!-- </ion-card-content>
