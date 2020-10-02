@@ -1,10 +1,18 @@
 ion-content{
-  --background: none;
-    background-image: url('/assets/bg-img.jpg');
+  --background:rgba(255,255,255,0);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover
 }
+.bgcolor {
+  // background-color: #fbb034;
+  // --background: linear-gradient(315deg, #fbb034 10%, #ffdd00 84%);
+  --background:rgba(255,255,255,0.6);
+
+
+
+}
+
 
 ion-icon{
   margin-left: 10px;

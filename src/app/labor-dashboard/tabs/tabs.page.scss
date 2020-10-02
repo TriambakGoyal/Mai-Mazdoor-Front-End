@@ -5,3 +5,15 @@ ion-icon{
 ion-label {
     font-family: 'Nunito', sans-serif;
 }
+ion-content{
+  --background:url('../../../assets/bg/bg1.jpeg') 0 0/100% 100% no-repeat ;
+
+}
+ion-tab-bar{
+  --background:rgba(255,255,255,0);
+
+}
+ion-tab-button{
+  --background:rgba(255,255,255,0);
+
+}

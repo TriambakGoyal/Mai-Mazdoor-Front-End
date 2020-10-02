@@ -2,6 +2,10 @@
   margin-top: 50px;
 }
 
+ion-content.background{
+  --background:url('../../assets/bg/bg1.jpeg') 0 0/100% 100% no-repeat ;
+}
+
 .signup-text{
   font-size: large;
   color: #a8a8a8;
@@ -26,7 +30,7 @@ ion-item{
 }
 
 .actionbutton{
-  background-color: turquoise;
+  background-color:#FBD40B;
   color: black;
   border-radius: 100px;
   margin-left: 15px;
