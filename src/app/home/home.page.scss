@@ -6,6 +6,28 @@ ion-content.background{
   --background:url('../../assets/bg/bg1.jpeg') 0 0/100% 100% no-repeat ;
 }
 
+ion-card{
+  border-style: none; 
+  background : rgba(0,0,0, 0.3); 
+  margin-top:20%
+}
+
+.input-fields{
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.input-fields-label{
+  font-size: medium;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.input-fields-text{
+  font-size:larger;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .signup-text{
   font-size: large;
   color: #a8a8a8;

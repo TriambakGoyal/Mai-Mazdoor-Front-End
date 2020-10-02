@@ -6,58 +6,61 @@
     <ion-row class="ion-no-padding ion-no-margin">
       <ion-col size-sm="4" offset-md="4" class="">
         <!-- SIGN IN DETAILS -->
-        <ion-card class="ion-no-border" style="border-style: none; background : rgba(255,255,255,0.3); margin-top:20%">
+        <ion-card class="ion-no-border">
           <ion-card-content class="ion-no-border ion-no-margin" style="border-style: none;">
-          <form #form="ngForm" (ngSubmit)="login(form)">
+            <form #form="ngForm" (ngSubmit)="login(form)">
+              
+              <!-- EMAIL ID -->
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-item color='light' class="input-fields">
+                      <ion-label position="stacked"class="input-fields-label" >Mobile Number</ion-label>
 
-            <!-- EMAIL ID -->
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <ion-item color='light' style="border-radius: 100px;">
-                    <ion-label position="floating">Mobile No.</ion-label>
-                    <ion-input type="text" name="s_phno" ngModel></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-              <br>
-              <ion-row >
-                <ion-col>
-                  <ion-item color='light' style="border-radius: 100px;">
-                    <div style="width: 100%; ">
-                        <ion-label position="floating">Password</ion-label>
+                      <ion-input type="number" name="s_phno" class="input-field-text" ngModel required pattern="^[9876]\d{9}$" >
+
+                      </ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                <br>
+                <ion-row >
+                  <ion-col>
+                    <ion-item color='light' class="input-fields">
+                      <div style="width: 100%; ">
+                        <ion-label position="stacked" class="input-fields-label">Password</ion-label>
                         <div style="display: flex; justify-content:space-between;width:100%;">
                           <!-- PASSWORD INPUT -->
-                          <ion-input type="password" name="s_password" ngModel></ion-input>
-
+                          <ion-input type="password" name="s_password" class="input-field-text" ngModel required></ion-input>
+                          
                           <!-- SHOW/HIDE PASSWORD ICON -->
                           <ion-button fill='clear' >
                             <ion-icon name="eye-outline"></ion-icon>
                           </ion-button></div>            
-                      </div>                      
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-              <br>
-              <ion-grid>
-                <ion-row>
-                  <ion-col>
-                    <div style="display:flex; height:36px; text-align:justify; margin-top:12px;">
-                      <ion-checkbox></ion-checkbox>&nbsp;&nbsp;
-                      <ion-label style="font-size:small; font-family: 'Nunito',sans-serif; text-align:center">Stay Connected</ion-label>
-                    </div>
-                  </ion-col>
-                  <ion-col >
-                    <!-- FORGOT PASSWORD -->
-                    <ion-button fill="clear" style="font-size: small; color: #a8a8a8; text-transform: none; font-family: 'Nunito',sans-serif;">Forgot Password?</ion-button>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-              <ion-button type="submit" class="actionbutton" expand='full' fill="clear" style="text-transform: none; font-weight: 1000;">LOGIN</ion-button>
-              <br>
-              <div style="align-content: center; text-align: center; color: #a8a8a8; font-size: small; "><b><p >New User? <span style="color:  turquoise;" routerLink="/signup">Register</span></p></b></div>
-            </form>
+                        </div>                      
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <br>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <div style="display:flex; height:36px; text-align:justify; margin-top:12px;">
+                        <ion-checkbox></ion-checkbox>&nbsp;&nbsp;
+                        <ion-label style="font-size:small; font-family: 'Nunito',sans-serif; text-align:center">Stay Connected</ion-label>
+                      </div>
+                    </ion-col>
+                    <ion-col >
+                      <!-- FORGOT PASSWORD -->
+                      <ion-button fill="clear" style="font-size: small; color: #a8a8a8; text-transform: none; font-family: 'Nunito',sans-serif;">Forgot Password?</ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <ion-button type="submit" class="actionbutton" expand='full' fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid">LOGIN</ion-button>
+                <br>
+                <div style="align-content: center; text-align: center; color: #a8a8a8; font-size: small; "><b><p >New User? <span style="color:  turquoise;" routerLink="/signup">Register</span></p></b></div>
+              </form>
             </ion-card-content>
           </ion-card>
         </ion-col>
