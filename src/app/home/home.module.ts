@@ -112,15 +112,8 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 //     ScrollingModule,
 //   ]
 // })
-export class HomePageModule implements OnInit{
+export class HomePageModule {
   // @ViewChild("show") divView: ElementRef;
-  hide : boolean=true;
-  ngOnInit(){
-
-  }
-  toggle(){
-    this.hide=!this.hide;
-  }
-
+ 
 
 }

@@ -62,14 +62,18 @@
                 <ion-row style="display: flex; justify-content: flex-end;">
                   
                   <!-- FORGOT PASSWORD -->
-                  <ion-button fill="clear" style="font-size: small; color: #000000;font-weight:bold; text-transform: none; font-family: 'Nunito',sans-serif;">Forgot Password?</ion-button>
+                  <span class="ion-padding"style="--background: transparent;font-size: small; color: black; font-weight:bold; text-transform: none; font-family: 'Nunito',sans-serif;">Forgot Password?</span>
                   
+                </ion-row>
+                <br>
+                <ion-row style="display: flex; justify-content: flex-end;">
+
+                  <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid">Sign In &nbsp;<ion-icon name="arrow-forward"></ion-icon></ion-button>
                 </ion-row>
               </ion-grid>
               <br>
-              <ion-button type="submit" class="actionbutton" expand='full' fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid">LOGIN</ion-button>
               <br><br>
-              <div style="align-content: center; text-align: center; color: #a8a8a8;font-weight: bold; font-size: small; "><b><p >Don't have an account? <span style="color:  black; font-weight: 500;" routerLink="/signup">Create</span></p></b></div>
+              <div style="align-content: center; text-align: center; color: #a8a8a8;font-weight: bold; font-size: small; "><b><p >Don't have an account? <span style="color:  black; font-weight: 500" routerLink="/signup">Create</span></p></b></div>
             </form>
           </ion-card-content>
         </ion-card>
