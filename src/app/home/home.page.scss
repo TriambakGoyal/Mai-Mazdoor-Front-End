@@ -1,14 +1,18 @@
 .ion-content-center{
   margin-top: 50px;
 }
+.card
+{
+box-shadow:none !important
+}
 
 ion-content.background{
-  --background:url('../../assets/bg/bg1.jpeg') 0 0/100% 100% no-repeat ;
+  --background:url('../../assets/bg/bg3.jpg') 0 0/100% 100% no-repeat ;
 }
 
 ion-card{
   border-style: none; 
-  background : rgba(0,0,0, 0.3); 
+  background : rgba(0,0,0, 0); 
   margin-top:20%
 }
 
@@ -93,4 +97,20 @@ ion-checkbox{
   margin-bottom: 40px;
   font-family: 'Nunito', sans-serif;
   text-transform: none;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
 }
