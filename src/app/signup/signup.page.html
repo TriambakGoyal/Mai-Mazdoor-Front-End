@@ -1,94 +1,101 @@
-<ion-content class="background ion-padding-top background" >
-  <ion-grid class="ion-content-center" style="margin-top: 0%;">
-    <ion-row>
-      <ion-col>
-        <br><div style="align-content: center; text-align: center;font-size: small; "><b><p >Fill the Form</p></b></div>
-        
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-no-padding ion-no-margin">
-      <ion-col size-md="5" offset-md="3.5" class="ion-no-padding ion-no-border ion-no-margin">
-        <form  #form="ngForm" (ngSubmit)="register(form)">
-              <ion-grid>
-                <ion-row>
-                  <ion-col>
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <ion-label position="floating" style="">Full Name</ion-label>
-                      <ion-input name="s_name" type="text" style="" ngModel required></ion-input>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row>
-                  <ion-col>
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <ion-label position="floating" style="">Age</ion-label>
-                      <ion-input name="s_age" type="number" style="" ngModel required></ion-input>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row>
-                  <ion-col>
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <ion-label position="floating" style="">Sex</ion-label>
-                      <ion-input name="s_gender" type="text" style="" ngModel required></ion-input>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row>
-                  <ion-col>
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <ion-label position="floating" style="">Location</ion-label>
-                      <ion-input name="s_location" type="text" style="" ngModel required></ion-input>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row>
-                  <ion-col>
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <ion-label position="floating">Mobile No.</ion-label>
-                      <ion-input type="number" name="s_phno" ngModel required></ion-input>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row >
-                  <ion-col >               
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <div style="width: 100%; ">
-                        <ion-label position="floating">Password</ion-label>
-                        <div style="display: flex; justify-content:space-between;width:100%;">
-                          <!-- PASSWORD INPUT -->
-                          <ion-input type="password" name="s_password" ngModel required></ion-input>
-                        </div>                        
-                      </div>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-                <br>
-                <ion-row >
-                  <ion-col >
-                    <ion-item color='light' style="border-radius: 100px;">
-                      <div style="width: 100%; ">
-                        <ion-label position="floating">Confirm Password</ion-label>
-                        <div style="display: flex; justify-content:space-between;width:100%;">
-                          <!-- PASSWORD INPUT -->
-                          <ion-input type="password" name="auth2" ngModel required></ion-input>
+  <ion-content class="ion-justify-content-evenly background">
+    <ion-grid class="ion-content-center ion-padding background" style="margin-top: 0px;">
+      <!-- <ion-row> 
+        <ion-col size-md="5" offset-md="3.5"><app-slide class="ion-no-padding"></app-slide></ion-col>
+      </ion-row> -->
+      <ion-row >
+        <ion-col class="ion-no-margin ion-no-padding"  style="display: flex; justify-content: space-around;" size-sm="4" offset-md="4">
+          <!-- <img src="../../assets/logo/mai_mazdoor_logo2.png" style="width: 80%;" class="ion-margin-horizontal" > -->
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-no-margin" style="height: inherit;">
+        <ion-col size-sm="4" offset-md="4" id="hello" class="ion-no-margin md-col">
+          <!-- SIGN IN DETAILS -->
+          <ion-card class="ion-no-border card">
+            <ion-card-content class="ion-no-border ion-no-margin" style="border-style: none;">
+              <form #form="ngForm" (ngSubmit)="user_detail(form)">
+                
+                <!-- EMAIL ID -->
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-item color='light' class="input-fields">
+                        <ion-label position="floating"class="input-fields-label" ><ion-icon name="person" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Name</ion-label>
+                        
+                        <ion-input type="text" name="u_name" class="input-field-text" #userName="ngModel" ngModel required pattern="[a-zA-Z]{3,30}|([a-zA-Z]){3,30}\s[a-zA-Z]{2,20}" >
+                        </ion-input>
+                      </ion-item>
+                      <div *ngIf="userName?.touched" class="alert">
+                        <div *ngIf="userName?.errors?.required" class="alert">
+                          Full Name is Required
                         </div>
-                      </div>                      
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-              <br>
-              
-              <ion-button type="submit" [disabled]="form.invalid" class="actionbutton" expand='full' fill="clear" style="text-transform: none;">REGISTER</ion-button>
-              <br><div style="align-content: center; text-align: center; color: #a8a8a8; font-size: small; "><b><p >Already Registered? <span style="color:  turquoise;" routerLink="/home">Login</span></p></b></div>
-        </form>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+                        <div *ngIf="userName?.errors?.pattern" class="alert">
+                          Name must only be alphabetical
+                        </div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                  <br>
+                  <ion-row>
+                    <ion-col>
+                      <ion-item color='light' class="input-fields">
+                        <ion-label position="floating"class="input-fields-label" ><ion-icon name="calendar" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Date of Birth</ion-label>
+                        <ion-datetime displayFormat="D MMM YYYY" min="1960" [max]="2002" name="DOB" #userDOB="ngModel" ngModel required></ion-datetime>
+                      </ion-item>
+                      <div *ngIf="userDOB?.touched" class="alert">
+                        <div *ngIf="userDOB?.errors?.required" class="alert">
+                          Date of Birth is Required
+                        </div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                  <br>
+                  <ion-row > 
+                    <ion-col >
+                      <ion-item color='light' class="input-fields">
+                        <ion-label class="input-fields-label"><ion-icon name="male-female-sharp"></ion-icon>&nbsp;Gender</ion-label>
+                        <ion-select name="sex" placeholder="Select One" interface="popover" style="height: 64px; background:#f4f5f8" ngModel required>
+                          <ion-select-option value="f" class="input-fields-label">Female</ion-select-option>
+                          <ion-select-option value="m" class="input-fields-label">Male</ion-select-option>
+                          <ion-select-option value="o" class="input-fields-label">Other</ion-select-option>
+                        </ion-select>
+                      </ion-item>        
+                    </ion-col>
+                  </ion-row>
+                  <br>
+                  <ion-row>
+                    <ion-col>
+                      <ion-item color='light' class="input-fields">
+                        <ion-label position="floating"class="input-fields-label" ><ion-icon name="call" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Mobile Number</ion-label>
+                        
+                        <ion-input type="number" name="s_phno" class="input-field-text" #userNumber="ngModel" maxlength="10" minlength="10" ngModel required pattern="^[9876]\d{9}$" >
+                          
+                        </ion-input>
+                      </ion-item>
+                      <div *ngIf="userNumber?.touched" class="alert">
+                        <div *ngIf="userNumber?.errors?.required" class="alert">
+                          Mobile Number is Required
+                        </div>
+                        <div *ngIf="userNumber?.errors?.pattern" class="alert">
+                          Mobile Number must contain 10 digits starting with 6-9
+                        </div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                  <br>
+
+                  <ion-row style="display: flex; justify-content: flex-end;">
+  
+                    <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid" routerLink="register">Continue &nbsp;<ion-icon name="arrow-forward"></ion-icon></ion-button>
+                  </ion-row>
+                </ion-grid>
+                <br>
+                <br><br>
+                <div style="align-content: center; text-align: center; color: #a8a8a8;font-weight: bold; font-size: small; "><b><p >Don't have an account? <span style="color:  black; font-weight: 500" routerLink="/signup">Create</span></p></b></div>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
