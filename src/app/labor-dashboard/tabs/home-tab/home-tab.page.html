@@ -37,12 +37,12 @@
     <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
-          <ion-card *ngFor="let job of job_list">
+          <ion-card (click)="expandItem(job)" *ngFor="let job of job_list">
             <ion-card-header >
               <ion-card-subtitle>
                 <ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}
               </ion-card-subtitle>
-              <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}</ion-card-title>
+              <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}<ion-icon src="" style="margin-left: 20%;"></ion-icon></ion-card-title>
             </ion-card-header>
             <ion-card-content>
               <p>{{job.job_description}}</p>
