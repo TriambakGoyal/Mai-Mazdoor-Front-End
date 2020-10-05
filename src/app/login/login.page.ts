@@ -6,32 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-
-  users: any[] = [
-    {
-      id: 1,
-      first: 'Alice',
-      last: 'Smith',
-    },
-    {
-      id: 2,
-      first: 'Bob',
-      last: 'Davis',
-    },
-    {
-      id: 3,
-      first: 'Charlie',
-      last: 'Rosenburg',
-    }
-  ];
-
-  compareWithFn = (o1: { id: any; }, o2: { id: any; }) => {
-    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  customAlertOptions: any = {
+    header: 'Pizza Toppings',
+    subHeader: 'Select your toppings',
+    message: '$1.00 per topping',
+    translucent: true
   };
 
-  compareWith = this.compareWithFn;
+  customPopoverOptions: any = {
+    header: 'Hair Color',
+    subHeader: 'Select your hair color',
+    message: 'Only select your dominant hair color'
+  };
 
+  customActionSheetOptions: any = {
+    header: 'Colors',
+    subHeader: 'Select your favorite color'
+  };
   constructor() {
    
   }

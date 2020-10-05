@@ -30,6 +30,21 @@ export class SignupPage implements OnInit {
     speed: 600,
     autoplay: true,
   };
+  work: any[] =[
+    {
+      Skill:"Plumbing",
+    
+    },
+    {
+      Skill:"Construction",
+    }
+    ];
+    work_skill: any = {
+      header: 'Your Skill',
+      subHeader: 'Choose you work field',
+      message: 'More than one can be choosed',
+      translucent: true
+    };
   constructor(private http: HttpClient,private router: Router,private datePipe: DatePipe) {
       this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
      }

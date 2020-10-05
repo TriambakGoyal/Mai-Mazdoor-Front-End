@@ -66,6 +66,12 @@
                   <ion-row>
                     <ion-col>
                       <ion-item color='light' class="input-fields">
+                        <ion-label class="input-fields-label" ><ion-icon name="build"></ion-icon>&nbsp;&nbsp;Work Skill</ion-label>
+                        <ion-select style="height: 64px;" [interfaceOptions]="work_skill" interface="alert" multiple="true" placeholder="Select One" name="work_skill" ngModel required>
+                          <ion-select-option [value]="w.Skill" *ngFor="let w of work">{{w.Skill}}</ion-select-option>
+                        </ion-select>
+                      </ion-item> 
+                      <!-- <ion-item color='light' class="input-fields">
                         <ion-label position="floating"class="input-fields-label" ><ion-icon name="call" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Mobile Number</ion-label>
                         
                         <ion-input type="number" name="s_phno" class="input-field-text" #userNumber="ngModel" maxlength="10" minlength="10" ngModel required pattern="^[9876]\d{9}$" >
@@ -79,7 +85,7 @@
                         <div *ngIf="userNumber?.errors?.pattern" class="alert">
                           Mobile Number must contain 10 digits starting with 6-9
                         </div>
-                      </div>
+                      </div> -->
                     </ion-col>
                   </ion-row>
                   <br>
