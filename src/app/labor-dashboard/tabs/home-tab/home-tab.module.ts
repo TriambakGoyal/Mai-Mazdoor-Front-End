@@ -11,6 +11,7 @@ import { HomeTabPage } from './home-tab.page';
 import { ModalController} from '@ionic/angular'
 import { async } from '@angular/core/testing';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
+import { ExpandableComponent } from "src/app/components/expandable/expandable.component";
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcont
     IonicModule,
     HomeTabPageRoutingModule
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent]
 })
 export class HomeTabPageModule {
 

@@ -27,9 +27,28 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
-  
+  //public items: any = [];
 
-  constructor(private http: HttpClient,private modalCtrl : ModalController) {}
+  constructor(private http: HttpClient,private modalCtrl : ModalController) {
+    // this.items = [
+    //   { expanded: false }
+    // ];
+  }
+
+  // expandItem(item): void {
+  //   if (item.expanded) {
+  //     item.expanded = false;
+  //   } else {
+  //     this.items.map(listItem => {
+  //       if (item == listItem) {
+  //         listItem.expanded = !listItem.expanded;
+  //       } else {
+  //         listItem.expanded = false;
+  //       }
+  //       return listItem;
+  //     });
+  //   }
+  // }
 
   job_list: IJob[];
   
