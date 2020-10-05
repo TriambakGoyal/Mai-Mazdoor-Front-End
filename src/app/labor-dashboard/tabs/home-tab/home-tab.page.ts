@@ -6,7 +6,8 @@ import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcont
 import { __values } from 'tslib';
 
 export interface IJob {
-  job_id: number;
+  job_id: number,
+  expanded:boolean,
   contractor: {
     contractor_id: number;
     contractor_name: string;
@@ -27,30 +28,31 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
+
+  job_list: IJob[];
+
   //public items: any = [];
 
   constructor(private http: HttpClient,private modalCtrl : ModalController) {
-    // this.items = [
-    //   { expanded: false }
-    // ];
+    // this.job_list["expanded"] = false; 
+    console.log(this.job_list);
   }
 
-  // expandItem(item): void {
-  //   if (item.expanded) {
-  //     item.expanded = false;
-  //   } else {
-  //     this.items.map(listItem => {
-  //       if (item == listItem) {
-  //         listItem.expanded = !listItem.expanded;
-  //       } else {
-  //         listItem.expanded = false;
-  //       }
-  //       return listItem;
-  //     });
-  //   }
-  // }
+  expandItem(job: IJob): void {
+    if (job.expanded) {
+      job.expanded = false;
+    } else {
+      this.job_list.map(listItem => {
+        if (job == listItem) {
+          listItem.expanded = !listItem.expanded;
+        } else {
+          listItem.expanded = false;
+        }
+        return listItem;
+      });
+    }
+  }
 
-  job_list: IJob[];
   
   async showModal(){
     const modal =await this.modalCtrl.create({

@@ -67,7 +67,7 @@
               <ion-card-title>{{job.job_name}} {{job.contractor.contractor_name}}<ion-icon src=".../.././assets/icon/down-arrow.svg" style="margin-left: 20%;"></ion-icon></ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <app-expandable expandHeight="400px" [expanded]="item.expanded">
+              <app-expandable expandHeight="400px" [expanded]="job.expanded">
                 <p>{{job.job_description}}</p>
                 <p>Starts At : {{job.job_start_date}}</p>
                 <p>Ends At : {{job.job_end_date}}</p>
