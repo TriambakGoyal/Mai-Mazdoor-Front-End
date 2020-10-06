@@ -18,7 +18,8 @@ export interface IJob {
   job_name: string,
   job_description: string,
   job_start_date: string,
-  job_end_date: string
+  job_end_date: string,
+  expanded: boolean,
 }
 
 @Component({
@@ -27,28 +28,29 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
-  //public items: any = [];
+  public items: any = [];
 
   constructor(private http: HttpClient,private modalCtrl : ModalController) {
-    // this.items = [
+    // this.job_list = [
     //   { expanded: false }
     // ];
+    this.items.expanded = false
   }
 
-  // expandItem(item): void {
-  //   if (item.expanded) {
-  //     item.expanded = false;
-  //   } else {
-  //     this.items.map(listItem => {
-  //       if (item == listItem) {
-  //         listItem.expanded = !listItem.expanded;
-  //       } else {
-  //         listItem.expanded = false;
-  //       }
-  //       return listItem;
-  //     });
-  //   }
-  // }
+  expandItem(item): void {
+    if (item.expanded) {
+      item.expanded = false;
+    } else {
+      this.items.map(listItem => {
+        if (item == listItem) {
+          listItem.expanded = !listItem.expanded;
+         } else {
+           listItem.expanded = false;
+         }
+         return listItem;
+       });
+     }
+   }
 
   job_list: IJob[];
   
