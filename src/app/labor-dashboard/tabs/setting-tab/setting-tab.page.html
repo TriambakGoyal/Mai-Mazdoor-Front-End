@@ -17,8 +17,6 @@
         </div>
 
         </ion-col>
-              
-       
          
       </ion-row>
     </ion-grid>
@@ -31,7 +29,9 @@
      <ion-row>
         <ion-col style="display: flex; justify-content: space-around;" >
           <ion-avatar style="width: 150px; height:150px; border:mediumblue; border-radius: 20px;">
-            <img [src]="http://127.0.0.1:8000/media/{{profile.s_image}}" style="background:rgba(184,205,207,0.5);box-shadow:10px 10px 10px 0px rgba(0,0,0,0.2);" >
+            <!-- <img src="http://127.0.0.1:8000/media/{{profile.s_image}}" style="background:rgba(184,205,207,0.5);box-shadow:10px 10px 10px 0px rgba(0,0,0,0.2);" > -->
+            <img src="/assets/logo/logo_1.png" style="background:rgba(184,205,207,0.5);box-shadow:10px 10px 10px 0px rgba(0,0,0,0.2);" >
+
           </ion-avatar>
        </ion-col>
      </ion-row>
@@ -39,13 +39,14 @@
      <ion-row>
        <ion-col style="display: flex; justify-content: space-around;" >
          <ion-label style="font-weight: 500;font-size: large;">
-          {{profile.s_name}}
+          <!-- {{profile.s_name}} -->
+          triambak Goyal
          </ion-label>
        </ion-col>
      </ion-row>
      <ion-row>
-          <ion-col class="ion-padding ion-margin">
-            <ion-card class="ion-no-border">
+          <ion-col class="ion-padding ion-no-margin" size-md="4" offset-md="4">
+            <ion-card class="ion-no-border" class="input-fields">
               <ion-card-content>
                 <div class="details">
                   <div>
@@ -56,7 +57,9 @@
   
                   </div>
                   <div>
-                        <ion-text>{{profile.s_gender}}</ion-text>
+                        <!-- <ion-text>{{profile.s_gender}}</ion-text> -->
+                        <ion-text>Male</ion-text>
+
   
                   </div>
 
@@ -70,7 +73,9 @@
   
                   </div>
                   <div>
-                        <ion-text>{{profile.s_dob}}</ion-text>
+                        <ion-text>20-20-2020</ion-text>
+                        <!-- <ion-text>{{profile.s_dob}}</ion-text> -->
+
   
                   </div>
 
@@ -84,31 +89,36 @@
   
                   </div>
                   <div>
-                        <ion-text>{{profile.s_phno}}</ion-text>
+                        <!-- <ion-text>{{profile.s_phno}}</ion-text> -->
+                        <ion-text>7746867462</ion-text>
+
   
                   </div>
 
                 </div>
-                <div class="details">
-                  <div>
-                    <ion-label class="input-fields-label" >
-                      <ion-icon name="build" class="ion-no-padding ion-no-margin ion-no-border">
-          
-                      </ion-icon>&nbsp;&nbsp;Skills</ion-label>
+                  <div class="skill-field ">
+                    <div class="">
+                      <ion-label class="input-fields-label" >
+                        <ion-icon name="build" class="ion-no-padding ion-no-margin ion-no-border">
+            
+                        </ion-icon>&nbsp;&nbsp;Skills</ion-label>
+    
+                    </div>
+                    <br>
+                    <div >
+                          <!-- <ion-chip *ngFor="let skill of profile.s_skill"  class="ion-padding ion-margin">{{ skill.skill_desc }}</ion-chip> -->
+                          <ion-chip class="ion-padding skill-chip">Hello</ion-chip>
+                          <ion-chip class="ion-padding">Hello</ion-chip>
+                          <ion-chip class="ion-padding">Hello</ion-chip>
+  
+                    </div>
   
                   </div>
-                  <div>
-                        <ion-text>hello</ion-text>
-  
+                  <br>  
+                  <div style="display:flex; justify-content: space-around;margin-bottom:20px">
+                    <button class="actionbutton"><p style="font-weight: 500;color:black; margin:0px 0px">UPDATE PROFILE</p></button>
+
                   </div>
-
-                </div>
-                  
-
-        
-                
-                   
-              
               </ion-card-content>
             </ion-card>
    

@@ -23,46 +23,24 @@
     <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
-
-          <!-- <ion-card (click)="expandItem(item)" *ngFor="let item of items">
-            <ion-card-header collapse="condense">
-              <ion-card-subtitle>
-                <ion-icon name="location"></ion-icon>Bangalore
-              </ion-card-subtitle>
-              <ion-card-title>Construction<ion-icon src=".../.././assets/icon/down.svg" style="margin-left: 58%; top: 10px;"></ion-icon></ion-card-title>
-              <ion-card-subtitle>Ram Singh</ion-card-subtitle>
-            </ion-card-header>
-        
-            <ion-card-content>
-              <app-expandable expandHeight="400px" [expanded]="item.expanded">
-               <p>Some description</p>
-                      <p>Starts At : 11-11-2020</p>
-                      <p>Ends At : 21-01-2021</p>
-                      <p>Rating : 3.9</p>
-                      <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
-                      
-              </app-expandable>
-            </ion-card-content>
-          </ion-card> -->
-
-          <ion-card (click)="expandItem(item)" *ngFor="let item of job_list">
-            <ion-card-header >
-              <ion-card-subtitle>
-                <ion-icon name="location"></ion-icon>{{item.contractor.contractor_location}}
-              </ion-card-subtitle>
-              <ion-card-title>{{item.job_name}} <ion-icon src=".../.././assets/icon/down-arrow.svg" style="margin-left: 58%; top: 10px;"></ion-icon></ion-card-title>
-              <ion-card-subtitle>{{item.job_description}}</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              <app-expandable expandHeight="400px" [expanded]="item.expanded">
-                <p>Contractor: {{item.contractor.contractor_name}}</p>
-                <p>Starts At : {{item.job_start_date}}</p>
-                <p>Ends At : {{item.job_end_date}}</p>
-                <p>Rating : {{item.contractor.contractor_rating}}</p>
-                <ion-button type="submit" class="apply-btn" fill="clear" style="text-transform: none; font-weight: 1000;">APPLY</ion-button>
-            </app-expandable>
-            </ion-card-content>
-          </ion-card>
+          <div class="accordion" *ngIf="job_list?.length">
+            <div class="accordion-item" *ngFor="let job of job_list; let offset = index">
+              <button id="accordion-button-{{offset}}" aria-expanded="false" (click)="toogleAccordion()">
+                <span class="accordion-title">{{job.job_name}} {{job.contractor.contractor_name}}</span>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <ion-card-subtitle>
+                  <ion-icon name="location"></ion-icon>{{job.contractor.contractor_location}}
+                  <h1>{{job.job_description}}</h1>
+                  <span>From : {{job.job_start_date}}</span> - <span> To : {{job.job_end_date}}</span>
+                  <h4><u>Contractor Details</u></h4>
+                  <h4>Rating : {{job.contractor.contractor_rating}}</h4>
+                  <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
+                </ion-card-subtitle>
+              </div>
+            </div>
+          </div>
         </div>
       </ion-col>
     </ion-row>

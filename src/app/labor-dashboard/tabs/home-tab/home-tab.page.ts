@@ -8,7 +8,6 @@ import { __values } from 'tslib';
 
 export interface IJob {
   job_id: number,
-  expanded:boolean,
   contractor: {
     contractor_id: number;
     contractor_name: string;
@@ -37,20 +36,6 @@ export class HomeTabPage implements OnInit {
   constructor(private http: HttpClient,private modalCtrl : ModalController) {
   }
   
-  expandItem(job: IJob): void {
-    if (job.expanded) {
-      job.expanded = false;
-    } else {
-      this.job_list.map(listItem => {
-        if (job == listItem) {
-          listItem.expanded = !listItem.expanded;
-        } else {
-          listItem.expanded = false;
-        }
-        return listItem;
-      });
-    }
-  }
   
   
   async showModal(){
@@ -65,18 +50,31 @@ export class HomeTabPage implements OnInit {
     
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/").subscribe(
     response => {
-      this.job_list = response;
+        this.job_list = response;
+        console.log(this.job_list)
       
-      for(let i=0; i<this.job_list.length ;i++)
-      {
-        this.job_list[i]["expanded"]=false;
-      }
-      console.log(this.job_list)
-
-    }
-    );
-    
-    
+      });
   }
-  
+
+  toogleAccordion() {
+    const items = document.querySelectorAll(".accordion button");
+
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+    
+    for (let i = 0; i < items.length; i++) {
+      items[i].setAttribute('aria-expanded', 'false');
+    }
+    
+    if (itemToggle == 'false') {
+      this.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  items.forEach(item => item.addEventListener('click', toggleAccordion));
+  }
+
+
+
+
 }

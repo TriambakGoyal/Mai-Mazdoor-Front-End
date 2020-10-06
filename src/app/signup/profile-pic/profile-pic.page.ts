@@ -1,4 +1,6 @@
+import { UploadService } from './../../upload.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-pic',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilePicPage implements OnInit {
 imgUrl : string = '/assets/logo/logo_1.png';
 FiletoUpload: File =null;
-  constructor() { }
+  constructor(
+    private uploadService: UploadService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -24,5 +29,22 @@ FiletoUpload: File =null;
     }
     reader.readAsDataURL(this.FiletoUpload);
 
+
+
+  }
+
+  uploadImage() {
+    const formData = new FormData();
+    formData.append('file', this.FiletoUpload);
+    formData.append('id',localStorage.getItem('id'))
+    this.uploadService.upload(formData).subscribe(
+      (res) => {
+        console.log("Image Uploaded")
+      },
+      (err) => {  
+        console.log(err);
+      }
+    );
+    this.router.navigate(['/home']);
   }
 }

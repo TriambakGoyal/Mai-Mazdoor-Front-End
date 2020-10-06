@@ -16,6 +16,13 @@ export interface ISignup {
   s_phno: string,
 }
 
+export interface ISkill{
+  skill_id: number,
+  skill_desc:string
+}
+
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -24,7 +31,8 @@ export interface ISignup {
 })
 export class SignupPage implements OnInit {
   date: Date = new Date(); 
-  year:any; 
+  year: any; 
+  skill_list: ISkill[];
 
   slideOpts = {
     initialSlide: 0,
@@ -46,31 +54,28 @@ export class SignupPage implements OnInit {
       message: 'More than one can be choosed',
       translucent: true
     };
-  constructor(private http: HttpClient,private router: Router,private datePipe: DatePipe) {
-      // this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-      // this.myDate.setDate(this.myDate - 20);
-      // this.myDate=Date.now().valueOf()
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private datePipe: DatePipe) {
       console.log("Date = " + this.date);
       this.date.setFullYear(this.date.getFullYear() - 19);
       this.year=this.date.getFullYear();
-   
-// console.log("Year = " + date.getFullYear());  
-// console.log("Date = " + date.getDate());  
-// console.log("Month = " + date.getMonth());  
-// console.log("Day = " + date.getDay());  
-// console.log("Hours = " + date.getHours());  
-// console.log("Minutes = " + date.getMinutes());  
-// console.log("Seconds = " + date.getSeconds());  
      }
 
   ngOnInit() {
+    this.http.get<ISkill[]>("http://127.0.0.1:8000/seeker/get-skills/").subscribe(
+      response => {
+          this.skill_list = response;
+          console.log(this.skill_list)
+        
+        });
   }
 
   user_detail(form:{ value: any;})
   {
-    console.log(form.value);
-    console.log(sessionStorage.getItem(name));
-
+    localStorage.setItem('formdata', JSON.stringify(form.value));
+    console.log(JSON.parse(localStorage.getItem('formdata')));
   }
 
   register(form: { value: any; }) {

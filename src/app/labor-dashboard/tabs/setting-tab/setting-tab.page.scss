@@ -13,29 +13,30 @@ ion-content{
 
 ion-card{
   border-style: none; 
-  background : #f4f5f8;
+  // background : #f4f5f8;
+  background: rgba(0,0,0,0.1);
   box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 ion-item{
   --background:rgba(0,0,0,0);
-  border: none !important;
 }
 
 .details{
  display: flex; 
  justify-content: space-between;
- margin:6px 6px;
-}
-// ion-icon{
-//   margin-left: 30%;
-//   // color:#116e8d;
-// }
+ margin:20px 20px;
 
-// ion-label{
-//   margin-left: 10%;
-// }
+}
+.skill-field{
+  margin:20px 0px 10px 20px;
+}
+.skill-chip{
+  font-size:medium;
+  font-weight: 700;
+  color: #034efc;
+}
 
 .btn {
 //   margin-top: 10px;70A1E3
@@ -47,37 +48,7 @@ ion-item{
     margin-top: 30%;
 }
 
-ion-button {
-  color: black;
-  border-radius: 50%;
-  font-family: 'Nunito', sans-serif;
-}
-  
-  .profile-pic {
-    position: relative;
-    border: 5px solid #079ed1;
-    padding: 3px;
-    border-radius: 100%;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    box-shadow: black;
-    margin: 0 auto;
-    width: 128px;
-    height: 128px;
-    overflow: hidden;
-    top: 40px;
-  }
-  
-  .profile-pic img {
-    width: 128px;
-    border-radius: 100%;
-  }
-  
- .info {
-  font-family: 'Nunito', sans-serif;
-  margin-top: 50px;
- }
+
 
  .input-fields{
   box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
@@ -85,12 +56,18 @@ ion-button {
   border-bottom-right-radius: 20px;
 
 }
+ion-text{
+  font-size:larger;
+  font-weight: 500;
+  color: #034efc;
+
+}
 
 .input-fields-label{
-  
-  font-size: small;
+  color: black;
+
+  font-size: medium;
   font-weight: 300;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .actionbutton{
   background-color:#FABE5A;
@@ -104,5 +81,8 @@ ion-button {
   font-size: small;
   font-family: 'Nunito', sans-serif;
   box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
+  padding: 10px 18px;
+  font-weight: 500;
+  align-self: center;
 
 }
