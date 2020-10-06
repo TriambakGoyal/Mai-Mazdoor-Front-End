@@ -1,3 +1,4 @@
+import { ExpandableComponent } from './../../../components/expandable/expandable.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { WorkTabPage } from './work-tab.page';
     IonicModule,
     WorkTabPageRoutingModule
   ],
-  declarations: [WorkTabPage]
+  declarations: [WorkTabPage,ExpandableComponent]
 })
 export class WorkTabPageModule {}

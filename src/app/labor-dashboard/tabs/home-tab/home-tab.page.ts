@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
@@ -28,16 +29,14 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
-
+  
   job_list: IJob[];
-
+  
   //public items: any = [];
-
+  
   constructor(private http: HttpClient,private modalCtrl : ModalController) {
-    // this.job_list["expanded"] = false; 
-    console.log(this.job_list);
   }
-
+  
   expandItem(job: IJob): void {
     if (job.expanded) {
       job.expanded = false;
@@ -52,23 +51,32 @@ export class HomeTabPage implements OnInit {
       });
     }
   }
-
+  
   
   async showModal(){
     const modal =await this.modalCtrl.create({
       component:  ModalcontentComponent
     });
     await modal.present();
-
+    
   }
-
+  
   ngOnInit() {
+    
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/").subscribe(
-      response => {
-        this.job_list = response;
-        console.log(this.job_list)
+    response => {
+      this.job_list = response;
+      
+      for(let i=0; i<this.job_list.length ;i++)
+      {
+        this.job_list[i]["expanded"]=false;
       }
-    );
-  }
+      console.log(this.job_list)
 
+    }
+    );
+    
+    
+  }
+  
 }
