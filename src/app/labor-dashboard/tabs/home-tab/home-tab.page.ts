@@ -21,7 +21,6 @@ export interface IJob {
   job_description: string,
   job_start_date: string,
   job_end_date: string,
-  expanded: boolean,
 }
 
 @Component({
