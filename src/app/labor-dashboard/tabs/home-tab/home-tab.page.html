@@ -20,7 +20,7 @@
 
 <ion-content >
   <ion-grid>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
           <div class="accordion" *ngIf="job_list?.length">
@@ -36,6 +36,38 @@
                   <span>From : {{job.job_start_date}}</span> - <span> To : {{job.job_end_date}}</span>
                   <h4><u>Contractor Details</u></h4>
                   <h4>Rating : {{job.contractor.contractor_rating}}</h4>
+                  <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
+                </ion-card-subtitle>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row> -->
+
+    <!-- FOR UI EDITING -->
+    <ion-row>
+      <ion-col size-md="5" offset-md="4">
+        <div class="feeds">
+          <div class="accordion">
+            <div class="accordion-item">
+              <div style="display: flex;"><ion-icon name="location" style="height: 28px;"></ion-icon>&nbsp;&nbsp;<h3 style="margin-bottom: 0px;">Bangalor</h3></div>
+              <br>
+              <button id="accordion-button" style="" aria-expanded="false" (click)="toogleAccordion()">
+                <div>
+                  <span class="accordion-title">Triambak Goyal</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </div>
+               
+              </button>
+              <div class="accordion-content">
+                <ion-card-subtitle>
+                  <h2 style="margin-top: 20px; color:darkslategrey">Water Service</h2>
+                  From : <span style="font-size: medium; font-weight:600;">20-20-2020</span> -  To : <span style="font-size: medium;font-weight:600;">20-20-2020</span>
+                  <h3 style="margin-top: 10px;"><u>Contractor Details</u></h3>
+                  <h4>Name: Ram Singh</h4>
+
+                  <h4>Rating : 4</h4>
                   <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
                 </ion-card-subtitle>
               </div>
