@@ -23,7 +23,11 @@ const routes: Routes = [
     path:'',
     redirectTo:'',
     pathMatch: "full"
+  },  {
+    path: 'profile-pic',
+    loadChildren: () => import('./profile-pic/profile-pic.module').then( m => m.ProfilePicPageModule)
   }
+
   
   
 ];
