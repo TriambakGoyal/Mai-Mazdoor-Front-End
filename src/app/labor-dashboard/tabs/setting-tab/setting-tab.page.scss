@@ -8,24 +8,29 @@ ion-content{
 .bgcolor {
   // background-color: #fbb034;
   // --background: linear-gradient(315deg, #fbb034 10%, #ffdd00 84%);
-  --background: transparent !important;
+  --ion-item-background:transparent !important;
+  align-items: center;
 
 }
 
 
-ion-icon{
-  margin-left: 10px;
-  color:#116e8d;
-}
+// ion-icon{
+//   margin-left: 30%;
+//   // color:#116e8d;
+// }
 
-ion-label{
-  margin-left: 50px;
-}
+// ion-label{
+//   margin-left: 10%;
+// }
 
 .btn {
-  margin-top: 10px;
+//   margin-top: 10px;70A1E3
+  
+  background-color:#70A1E3;
   margin-left: 20px;
   margin-right: 20px;
+  border-radius: 10px;
+    margin-top: 30%;
 }
 
 ion-button {
