@@ -13,24 +13,30 @@
 
 <ion-content fullscreen="true">
 <form #imgForm=ngForm>
-  <ion-grid class="ion-padding ion-margin" style="margin-top: 10%;">
+  <br>
+
+  <ion-grid class="ion-padding ion-margin" >
     <ion-row >
-      <ion-col style="display: flex; justify-content: space-around;">
+      <ion-col style="display: flex; justify-content: space-around;" >
         <ion-avatar style="width: 180px; height:180px; border:mediumblue; border-radius: 20px;">
           <img [src]="imgUrl" style="background:rgba(184,205,207,0.5);box-shadow:10px 10px 10px 0px rgba(0,0,0,0.2);" >
         </ion-avatar>
       </ion-col>
-    
+  
     </ion-row>
-    <br>
-    <br>
-    <br>
-    <br>
+   <br>
+   <br>
+   <br>
+   <br><br>
     <ion-row>
       <ion-col style="display: flex; justify-content: space-around;">
-        <input style="display:none;" type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)">
-        <ion-button (click)="image.click()" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;">Upload Image &nbsp;<ion-icon name="image-outline"></ion-icon></ion-button>
-      
+        <input style="display:none;" type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)" required>
+        <ion-button (click)="image.click()" #but class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;">Upload Image &nbsp;<ion-icon name="image-outline"></ion-icon></ion-button>
+        <div *ngIf="but?.touched" class="alert">
+          <div *ngIf="image.value == ''" class="alert">
+            Profile picture is Required
+          </div>
+        </div>
       </ion-col>
      
     </ion-row>
@@ -38,7 +44,7 @@
     <br>
     
   <ion-row>
-    <ion-col style="display: flex; justify-content: space-around;">
+    <ion-col style="display: flex; justify-content: space-around;" >
       <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 900;" [disabled]="image.value == '' || imgForm.invalid" routerLink="register">Submit &nbsp;
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>  

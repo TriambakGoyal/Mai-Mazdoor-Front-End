@@ -18,15 +18,12 @@
                     <ion-item color='light' class="input-fields">
                       <ion-label position="floating"class="input-fields-label" ><ion-icon name="home" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Home Address</ion-label>
                       
-                      <ion-input type="text" name="u_add" class="input-field-text" #userAdd="ngModel" ngModel required pattern="[a-zA-Z]{3,30}|([a-zA-Z]){3,30}\s[a-zA-Z]{2,20}" >
+                      <ion-input type="text" name="u_add" class="input-field-text" #userAdd="ngModel" ngModel required  >
                       </ion-input>
                     </ion-item>
                     <div *ngIf="userAdd?.touched" class="alert">
                       <div *ngIf="userAdd?.errors?.required" class="alert">
                         Address is Required
-                      </div>
-                      <div *ngIf="userAdd?.errors?.pattern" class="alert">
-                        Name must only be alphabetical
                       </div>
                     </div>
                   </ion-col>
@@ -36,18 +33,28 @@
                   <ion-col>
                     <ion-item color='light' class="input-fields">
                       <ion-label   position="floating" class="input-fields-label"><ion-icon name="location"></ion-icon>&nbsp;&nbsp;City</ion-label>
-                      <ion-select name="city" ngModel required>
+                      <ion-select name="city" #userCity ngModel required>
                         <ion-select-option [value]="local.city" *ngFor="let local of location">{{ local.city }}</ion-select-option>
                       </ion-select>
                     </ion-item>
+                    <div *ngIf="userCity?.touched" class="alert">
+                      <div *ngIf="userCity?.errors?.required" class="alert">
+                        Select City
+                      </div>
+                    </div>
                   </ion-col>
                   <ion-col>
                     <ion-item color='light' class="input-fields" >
                       <ion-label position="floating" class="input-fields-label"><ion-icon name="locate"></ion-icon>&nbsp;&nbsp;State</ion-label>
-                      <ion-select style="justify-content: center;" name="state" ngModel required>
+                      <ion-select style="justify-content: center;" name="state" #userState ngModel required>
                         <ion-select-option [value]="state.State" *ngFor="let state of location">{{state.State}}</ion-select-option>
                       </ion-select>
                     </ion-item>
+                    <div *ngIf="userState?.touched" class="alert">
+                      <div *ngIf="userState?.errors?.required" class="alert">
+                        Select City
+                      </div>
+                      </div>
                   </ion-col>
                 </ion-row>
                 <br>
@@ -90,6 +97,11 @@
                         </ion-button></div>            
                       </div>                      
                     </ion-item>
+                    <div *ngIf="pass?.touched" class="alert">
+                      <div *ngIf="pass?.errors?.required" class="alert">
+                        Input Password
+                      </div>
+                    </div>
                   </ion-col>
                 </ion-row>
                 <br>
@@ -123,7 +135,7 @@
                   <ion-col style="display: flex; justify-content: space-between;">
                     <ion-button class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;" routerLink="/signup"><ion-icon name="arrow-back"></ion-icon> &nbsp;Back</ion-button>
 
-                    <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid" routerLink="/signup/profil-pic">Continue &nbsp;<ion-icon name="arrow-forward"></ion-icon></ion-button>
+                    <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 1000;" [disabled]="form.invalid" routerLink="signup/profil-pic">Continue &nbsp;<ion-icon name="arrow-forward"></ion-icon></ion-button>
 
                   </ion-col>
                  </ion-row>

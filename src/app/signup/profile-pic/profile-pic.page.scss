@@ -25,3 +25,12 @@ ion-content{
     box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
   
   }
+
+  .alert{
+    color: red;
+    transition:5s;
+    overflow: hidden;
+    text-align: left;
+    padding: 3px;
+  
+  }
