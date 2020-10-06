@@ -1,11 +1,3 @@
-ion-slide{
-    height: 30%;
-    margin-top: 10px;
-    border: 1px;
-    border-bottom: darkgray;
-    --bullet-background:  darkgray;
-    --bullet-background-active:black;
-}
 
 
 $bg: #fff;
@@ -119,12 +111,27 @@ $blue: #03b5d2;
 
 ion-content{
     // --background:url('../../../../assets/bg/bg1.jpeg') 0 0/100% 100% no-repeat;
-    --background:rgba(255,255,255,0);
-  
-  
+    --background:rgba(255,255,255,0); 
   }
 
   
-.apply-btn {
-    margin-left: 65%;
+ion-card {
+    border-radius: 15px;
+  }
+  
+.drop {
+    position: relative;
+    margin-left: 90%;
+    top: -50px;
+  }
+  
+.apply-btn{
+    background-color:#FABE5A;
+    color: black;
+    border-radius: 100px;
+    margin-left: 70%;
+  
+    font-size: small;
+   
+    
   }
