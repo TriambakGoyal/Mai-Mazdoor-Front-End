@@ -16,7 +16,7 @@
                       <ion-item color='light' class="input-fields">
                         <ion-label position="floating"class="input-fields-label" ><ion-icon name="person" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Name</ion-label>
                         
-                        <ion-input type="text" name="u_name" class="input-field-text" #userName="ngModel" ngModel required pattern="[a-zA-Z\s]*" >
+                        <ion-input type="text" name="s_name" class="input-field-text" #userName="ngModel" ngModel required pattern="[a-zA-Z\s]*" >
                         </ion-input>
                       </ion-item>
                       <div *ngIf="userName?.touched" class="alert">
@@ -34,7 +34,7 @@
                     <ion-col>
                       <ion-item color='light' class="input-fields">
                         <ion-label position="floating"class="input-fields-label" ><ion-icon name="calendar" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Date of Birth</ion-label>
-                        <ion-datetime displayFormat="D MMM YYYY" min="1960" [max]="year" name="DOB" #userDOB="ngModel" ngModel required></ion-datetime>
+                        <ion-datetime displayFormat="D MMM YYYY" min="1960" [max]="year" name="s_dob" #userDOB="ngModel" ngModel required></ion-datetime>
                       </ion-item>
                       <div *ngIf="userDOB?.touched" class="alert">
                         <div *ngIf="userDOB?.errors?.required" class="alert">
@@ -48,10 +48,10 @@
                     <ion-col >
                       <ion-item color='light' class="input-fields">
                         <ion-label class="input-fields-label"><ion-icon name="male-female-sharp"></ion-icon>&nbsp;Gender</ion-label>
-                        <ion-select name="sex" placeholder="Select One" interface="alert" style="height: 64px; background:#f4f5f8" ngModel required>
-                          <ion-select-option value="f" class="input-fields-label">Female</ion-select-option>
-                          <ion-select-option value="m" class="input-fields-label">Male</ion-select-option>
-                          <ion-select-option value="o" class="input-fields-label">Other</ion-select-option>
+                        <ion-select  placeholder="Select One" interface="alert" style="height: 64px; background:#f4f5f8" name="s_gender"ngModel required>
+                          <ion-select-option value="F" class="input-fields-label">Female</ion-select-option>
+                          <ion-select-option value="M" class="input-fields-label">Male</ion-select-option>
+                          <ion-select-option value="O" class="input-fields-label">Other</ion-select-option>
                         </ion-select>
                       </ion-item>        
                     </ion-col>
@@ -61,25 +61,10 @@
                     <ion-col>
                       <ion-item color='light' class="input-fields">
                         <ion-label class="input-fields-label"><ion-icon name="build"></ion-icon>&nbsp;&nbsp;Work Skill</ion-label>
-                        <ion-select style="height: 64px;" [interfaceOptions]="work_skill" interface="alert" multiple="true" placeholder="Select" name="work_skill" ngModel required>
-                          <ion-select-option [value]="w.Skill" *ngFor="let w of work">{{w.Skill}}</ion-select-option>
+                        <ion-select style="height: 64px;" interface="alert" multiple="true" placeholder="Select" name="s_skill" ngModel required>
+                          <ion-select-option value="{{skill.skill_id}}" *ngFor="let skill of skill_list">{{skill.skill_desc}}</ion-select-option>
                         </ion-select>
                       </ion-item> 
-                      <!-- <ion-item color='light' class="input-fields">
-                        <ion-label position="floating"class="input-fields-label" ><ion-icon name="call" class="ion-no-padding ion-no-margin ion-no-border"></ion-icon>&nbsp;&nbsp;Mobile Number</ion-label>
-                        
-                        <ion-input type="number" name="s_phno" class="input-field-text" #userNumber="ngModel" maxlength="10" minlength="10" ngModel required pattern="^[9876]\d{9}$" >
-                          
-                        </ion-input>
-                      </ion-item>
-                      <div *ngIf="userNumber?.touched" class="alert">
-                        <div *ngIf="userNumber?.errors?.required" class="alert">
-                          Mobile Number is Required
-                        </div>
-                        <div *ngIf="userNumber?.errors?.pattern" class="alert">
-                          Mobile Number must contain 10 digits starting with 6-9
-                        </div>
-                      </div> -->
                     </ion-col>
                   </ion-row>
                   <br><br>

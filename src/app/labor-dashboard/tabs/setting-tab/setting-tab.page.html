@@ -1,7 +1,7 @@
 
   <ion-content>
       <div class="profile-pic"> 
-      <img src=".../.././assets/icon/user_profile.png">
+      <img src="http://127.0.0.1:8000/media/{{profile.s_image}}">
     </div>
 
     <div class="info">
@@ -9,25 +9,25 @@
     <ion-item class="bgcolor">
       <ion-icon name="person-outline" size="small"></ion-icon>
       <ion-label style="font-family: 'Nunito', sans-serif; background-color: transparent;">
-        Neha K
+        {{profile.s_name}}
       </ion-label>
     </ion-item>
     <ion-item >
       <ion-icon name="calendar-outline" size="small"></ion-icon>
       <ion-label style="font-family: 'Nunito', sans-serif;">
-        04-Apr-1988
+        {{profile.s_dob}}
       </ion-label>
     </ion-item>
     <ion-item >
       <ion-icon src=".../.././assets/icon/gender.svg" size="small"></ion-icon>
       <ion-label style="font-family: 'Nunito', sans-serif;">
-        Female
+        {{profile.s_gender}}
       </ion-label>
     </ion-item>
     <ion-item >
       <ion-icon name="phone-portrait-outline" size="small"></ion-icon>
       <ion-label style="font-family: 'Nunito', sans-serif;">
-        98476-16273
+        {{profile.s_phno}}
       </ion-label>
     </ion-item>
     <ion-item >

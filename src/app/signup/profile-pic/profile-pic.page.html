@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-<form #imgForm=ngForm>
+<form #imgForm=ngForm (ngSubmit)="uploadImage()">
   <ion-grid class="ion-padding ion-margin" style="margin-top: 10%;">
     <ion-row >
       <ion-col style="display: flex; justify-content: space-around;">
@@ -39,7 +39,7 @@
     
   <ion-row>
     <ion-col style="display: flex; justify-content: space-around;">
-      <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 900;" [disabled]="image.value == '' || imgForm.invalid" routerLink="register">Submit &nbsp;
+      <ion-button type="submit" class="actionbutton" fill="clear" style="text-transform: none; font-weight: 900;" [disabled]="image.value == '' || imgForm.invalid" ng-click="uploadImage()">Submit &nbsp;
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>  
     </ion-col>
