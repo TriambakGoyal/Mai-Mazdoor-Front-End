@@ -1,57 +1,24 @@
+<ion-header>
+  <ion-toolbar size-md="5" offset-md="4" style=" display: flex; justify-content: space-around;" class="bgcolor">
+    <ion-grid style="background: transparent;">
+      <ion-row  style="background: transparent;">
+        <ion-col style="display: flex; justify-items: right;">
+          <div>
+            <ion-avatar slot="start">
+              <img src="assets/logo/logo_1.png">
+            </ion-avatar>
+          </div>
+        <div style="display: block; justify-content: space-evenly;padding:20px 20px">
+            <p style="margin-bottom: 0px; font-size: x-large; font-weight: 500;">Jobs</p>
+        </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-toolbar>
+  </ion-header>
 <ion-content>
-  <ion-list>
-    <ion-list-header style="font-family: 'Nunito', sans-serif;">
-      Scheduled
-    </ion-list-header>
-
-    <ion-item routerLink="/tabs/job-details" routerDirection="root">
-      <ion-avatar slot="start">
-        <img src="./avatar-finn.png">
-      </ion-avatar>
-      <ion-label style="font-family: 'Nunito', sans-serif;" >
-        <h2>Building construction</h2>
-        <h3>Yelahanka</h3>
-        <p></p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item routerLink="/tabs/job-details" routerDirection="root">
-      <ion-avatar slot="start">
-        <img src="./avatar-han.png">
-      </ion-avatar>
-      <ion-label style="font-family: 'Nunito', sans-serif;">
-        <h2>Han</h2>
-        <h3>Look, kid...</h3>
-        <p>I've got enough on my plate as it is, and I...</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-list-header style="font-family: 'Nunito', sans-serif;">
-      Earlier
-    </ion-list-header>
-
-    <ion-item routerLink="/tabs/job-details" routerDirection="root">
-      <ion-avatar slot="start">
-        <img src="./avatar-poe.png">
-      </ion-avatar>
-      <ion-label style="font-family: 'Nunito', sans-serif;">
-        <h2>Poe</h2>
-        <h3>New Ride</h3>
-        <p>I just upgraded my X-Wing. Next time...</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item routerLink="/tabs/job-details" routerDirection="root">
-      <ion-avatar slot="start">
-        <img src="./avatar-ben.png">
-      </ion-avatar>
-      <ion-label style="font-family: 'Nunito', sans-serif;">
-        <h2>Ben</h2>
-        <h3>Move Along</h3>
-        <p>These aren't the droids you're looking for...</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-item color='light' class=" ion-margin input-fields">
+    <b>No Jobs Appointed</b>
+  </ion-item>
 </ion-content>

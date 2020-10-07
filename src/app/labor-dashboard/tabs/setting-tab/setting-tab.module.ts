@@ -16,6 +16,7 @@ import { SettingTabPage } from './setting-tab.page';
     IonicModule,
     SettingTabPageRoutingModule,
   ],
-  declarations: [SettingTabPage,AvtarComponent,]
+  declarations: [SettingTabPage,AvtarComponent,],
+  providers:[DatePipe]
 })
 export class SettingTabPageModule {}

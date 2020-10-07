@@ -30,18 +30,8 @@ export class SettingTabPage implements OnInit {
   
 
   constructor(
-    private http: HttpClient
-  ) { 
-    // this.profile.s_name = "";
-    // this.profile.s_gender = "";
-    // this.profile.s_phno = "";
-    // this.profile.s_dob = "";
-    // this.profile.s_locailty = "";
-    // this.profile.s_city = "";
-    // this.profile.s_state = "";
-    // this.profile.s_skills = [];
-    // this.profile.s_image = "";
-  }
+    private http: HttpClient,private datePipe: DatePipe
+  ) { }
 
   ngOnInit() {
     var seeker_id = localStorage.getItem("id");
@@ -50,7 +40,7 @@ export class SettingTabPage implements OnInit {
       response => {
         console.log(response);
         this.profile = response;
-        // this.profile['s_dob']=this.datepipe.transform(this.profile['s_dob'], 'dd/MM/yyyy');
+        this.profile['s_dob']=this.datePipe.transform(this.profile['s_dob'], 'dd-MM-yyyy');
         });
   }
 

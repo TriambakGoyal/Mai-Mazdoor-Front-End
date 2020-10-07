@@ -1,3 +1,4 @@
+import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { ExpandableComponent } from './../../../components/expandable/expandable.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +17,6 @@ import { WorkTabPage } from './work-tab.page';
     IonicModule,
     WorkTabPageRoutingModule
   ],
-  declarations: [WorkTabPage,ExpandableComponent]
+  declarations: [WorkTabPage,ExpandableComponent,AvtarComponent]
 })
 export class WorkTabPageModule {}
