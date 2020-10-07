@@ -56,8 +56,7 @@ export class SignupPage implements OnInit {
     };
   constructor(
     private http: HttpClient,
-    private router: Router,
-    private datePipe: DatePipe) {
+    private router: Router) {
       console.log("Date = " + this.date);
       this.date.setFullYear(this.date.getFullYear() - 19);
       this.year=this.date.getFullYear();

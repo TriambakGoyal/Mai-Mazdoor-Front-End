@@ -30,7 +30,7 @@ export class RegisterPage implements OnInit {
     this.http.post("http://127.0.0.1:8000/seeker/sign-up/", new_form).subscribe(
       res => {
         this.seeker_id = res["id"];
-        localStorage.setItem('id', this.seeker_id);
+        // localStorage.setItem('id', this.seeker_id);
       }
     )
 

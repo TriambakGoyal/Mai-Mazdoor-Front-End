@@ -28,7 +28,7 @@ export class SettingTabPage implements OnInit {
   profile: IProfile;
 
   constructor(
-    private http: HttpClient,public datepipe: DatePipe
+    private http: HttpClient,private datePipe: DatePipe
   ) { }
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class SettingTabPage implements OnInit {
       response => {
         console.log(response);
         this.profile = response;
-        this.profile['s_dob']=this.datepipe.transform(this.profile['s_dob'], 'dd/MM/yyyy');
+        this.profile['s_dob']=this.datePipe.transform(this.profile['s_dob'], 'dd/MM/yyyy');
         });
   }
 
