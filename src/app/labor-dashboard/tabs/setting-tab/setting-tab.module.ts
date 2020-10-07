@@ -1,6 +1,6 @@
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -14,8 +14,9 @@ import { SettingTabPage } from './setting-tab.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SettingTabPageRoutingModule
+    SettingTabPageRoutingModule,
+    DatePipe
   ],
-  declarations: [SettingTabPage,AvtarComponent]
+  declarations: [SettingTabPage,AvtarComponent,]
 })
 export class SettingTabPageModule {}

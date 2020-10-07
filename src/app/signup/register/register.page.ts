@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
     var new_form = Object.assign(old_form, form.value);
     this.http.post("http://127.0.0.1:8000/seeker/sign-up/", new_form).subscribe(
       res => {
-        this.seeker_id = res.id;
+        this.seeker_id = res["id"];
         localStorage.setItem('id', this.seeker_id);
       }
     )

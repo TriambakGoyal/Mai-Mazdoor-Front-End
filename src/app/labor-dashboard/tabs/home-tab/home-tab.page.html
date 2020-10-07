@@ -20,7 +20,7 @@
 
 <ion-content >
   <ion-grid>
-    <!-- <ion-row>
+   <!-- <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
           <div class="accordion" *ngIf="job_list?.length">
@@ -38,7 +38,7 @@
                   <h4>Rating : {{job.contractor.contractor_rating}}</h4>
                   <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
                 </ion-card-subtitle>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
                 <h3 style="margin-bottom: 0px;">{{job.contractor.contractor_location}}</h3>
               </div>
               <br>
-              <button id="accordion-button-{{offset}}" style="" aria-expanded="false" (click)="toogleAccordion()">
+              <button id="accordion-button-{{offset}}"  aria-expanded="false" (click)="toogleAccordion()">
                 <div>
                   <span class="accordion-title">{{job.job_name}}</span>
                   <span class="icon" aria-hidden="true"></span>
