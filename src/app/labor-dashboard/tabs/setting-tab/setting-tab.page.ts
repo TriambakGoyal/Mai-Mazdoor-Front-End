@@ -38,7 +38,7 @@ export class SettingTabPage implements OnInit {
       response => {
         console.log(response);
         this.profile = response;
-        this.profile['s_dob']=this.datePipe.transform(this.profile['s_dob'], 'dd/MM/yyyy');
+        this.profile['s_dob']=this.datePipe.transform(this.profile['s_dob'], 'dd-MM-yyyy');
         });
   }
 

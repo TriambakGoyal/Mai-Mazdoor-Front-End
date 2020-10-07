@@ -36,8 +36,10 @@ ion-card{
 
 ion-item{
   background-color: darkgray;
-  border-radius: 5px;
   font-size: small;
+  box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .actionbutton{
