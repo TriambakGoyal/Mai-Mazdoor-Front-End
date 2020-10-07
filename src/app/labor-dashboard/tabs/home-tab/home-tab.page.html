@@ -65,13 +65,14 @@
               <div class="accordion-content">
                 <ion-card-subtitle>
                   <h2 style="margin-top: 20px; color:darkslategrey">{{job.job_description}}</h2>
+                  <span style="font-size: medium;font-weight:600;"> Skills : {{job.job_skill.skill_desc}}</span><br><br>
+
                   From : <span style="font-size: medium; font-weight:600;">{{job.job_start_date}}</span>
                    -  To : 
-                   <span style="font-size: medium;font-weight:600;">{{job.job_end_date}}</span>
-                  <h3 style="margin-top: 10px;"><u>Contractor Details</u></h3>
-                  <h4>Name: {{job.contractor.contractor_name}}</h4>
-
-                  <h4>Rating : {{job.contractor.contractor_rating}}</h4>
+                   <span style="font-size: medium;font-weight:600;">{{job.job_end_date}}</span><br>
+                  <span style="margin-top: 10px;"><u>Contractor Details</u></span><br><br>
+                  <span>Name: {{job.contractor.contractor_name}}</span><br>
+                  <span>Rating : {{job.contractor.contractor_rating}}</span><br>
                   <div class="apply-btn"><ion-button color="success" shape="round">APPLY</ion-button></div>
                 </ion-card-subtitle>
               </div>

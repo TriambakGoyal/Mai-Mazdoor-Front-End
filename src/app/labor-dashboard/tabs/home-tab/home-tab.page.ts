@@ -16,6 +16,10 @@ export interface IJob {
     contractor_location: string;
     contractor_rating: string;
   },
+  job_skill: {
+    skill_desc: string;
+    skill_id: string;
+  }
   job_name: string,
   job_description: string,
   job_start_date: string,
@@ -48,7 +52,9 @@ export class HomeTabPage implements OnInit {
   
   ngOnInit() {
     
-    this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/").subscribe(
+    var seeker_id = localStorage.getItem("id");
+    console.log("hello",seeker_id);
+    this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/"+seeker_id).subscribe(
     response => {
         this.job_list = response;
         console.log(this.job_list)
