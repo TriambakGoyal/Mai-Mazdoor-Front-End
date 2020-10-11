@@ -49,8 +49,9 @@
     <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
+          <!-- <div><input type="text" [(ngModel)]="locations"></div> -->
           <div class="accordion" *ngIf="job_list?.length">
-            <div class="accordion-item" *ngFor="let job of job_list; let offset = index">
+            <div class="accordion-item" *ngFor="let job of job_list | Joblocation:locations; let offset = index">
               <div style="display: flex;"><ion-icon name="location" style="height: 28px;"></ion-icon>&nbsp;&nbsp;
                 <h3 style="margin-bottom: 0px;">{{job.contractor.contractor_location}}</h3>
               </div>

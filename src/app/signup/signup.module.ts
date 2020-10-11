@@ -10,6 +10,7 @@ import { SignupPageRoutingModule } from './signup-routing.module';
 import { SignupPage } from './signup.page';
 import { RegisterPageModule } from './register/register.module';
 import { AvtarComponent } from '../components/avtar/avtar.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,9 @@ import { AvtarComponent } from '../components/avtar/avtar.component';
     IonicModule,
     SignupPageRoutingModule,
     RegisterPageModule,
+    ComponentsModule
+
   ],
-  declarations: [SignupPage,AvtarComponent,]
+  declarations: [SignupPage,AvtarComponent]
 })
 export class SignupPageModule {}

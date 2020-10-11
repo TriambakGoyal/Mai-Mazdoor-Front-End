@@ -30,22 +30,35 @@ export interface IJob {
 export class HomeTabPage implements OnInit {
   
   job_list: IJob[];
+  locations:string="";
+
+  public filter_detail = {
+    job_name: '',
+    location: ''
+  }
   
   //public items: any = [];
   
-  constructor(private http: HttpClient,private modalCtrl : ModalController) {
+  constructor(private http: HttpClient,
+    private modalCtrl : ModalController    ) {  
   }
-  
-  
+
   
   async showModal(){
+    console.log("opening modal"+this.filter_detail);
     const modal =await this.modalCtrl.create({
-      component:  ModalcontentComponent
+      component:  ModalcontentComponent,
+      componentProps: { filter_detail: this.filter_detail },
     });
+    modal.onDidDismiss()
+    .then((data) => {
+      this.filter_detail = data['data']; // Here's your selected user!
+  });
     await modal.present();
-    
-  }
   
+  
+  }
+
   ngOnInit() {
     
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/").subscribe(
@@ -54,6 +67,7 @@ export class HomeTabPage implements OnInit {
         console.log(this.job_list)
       
       });
+
   }
 
   toogleAccordion() {

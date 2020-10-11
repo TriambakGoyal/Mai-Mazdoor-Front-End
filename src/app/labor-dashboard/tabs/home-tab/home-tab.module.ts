@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../../../components/components.module';
+import { LocationPipe } from './../../../filter/location.pipe';
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,12 +20,11 @@ import { ExpandableComponent } from "src/app/components/expandable/expandable.co
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeTabPageRoutingModule
+    HomeTabPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent, LocationPipe,]
 })
 export class HomeTabPageModule {
 
-
-  
 }
