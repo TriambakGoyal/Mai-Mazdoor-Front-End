@@ -49,20 +49,18 @@ export class HomeTabPage implements OnInit {
 
   
   async showModal(){
-    console.log("opening modal"+this.filter_detail);
+    // console.log("opening modal"+this.filter_detail);
     const modal =await this.modalCtrl.create({
       component:  ModalcontentComponent,
       componentProps: { filter_detail: this.filter_detail },
     });
     modal.onDidDismiss()
     .then((data) => {
-      this.filter_detail = data['data']; // Here's your selected user!
+      this.filter_detail = data['data'];
   });
     await modal.present();
-  
-  
-  }
 
+  }
   ngOnInit() {
     
     var seeker_id = localStorage.getItem("id");

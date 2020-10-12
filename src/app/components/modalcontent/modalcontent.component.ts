@@ -12,6 +12,8 @@ export class ModalcontentComponent implements OnInit {
 
   async close(){
     await this.modalCtrl.dismiss(this.filter_detail);
+    await this.modalCtrl.dismiss();
+
     console.log(this.filter_detail);
     
   }
@@ -19,7 +21,7 @@ export class ModalcontentComponent implements OnInit {
 // location:string="";
 
   ngOnInit() {
-    console.log("On initial"+this.filter_detail);
+    // console.log("On initial"+this.filter_detail);
   }
   
 

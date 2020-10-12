@@ -2,6 +2,11 @@ import { Component ,OnInit} from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+export interface ILoginResponse{
+  id:number,
+  STATUS:string
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -23,9 +28,9 @@ export class HomePage implements OnInit {
   login(form) {
     console.log(form.value);
 
-    this.http.post("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
+    this.http.post<ILoginResponse>("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
       res => {
-        console.log(res)
+        console.log(res.id);
         localStorage.setItem("id", res.id);
       },
       (err) => {

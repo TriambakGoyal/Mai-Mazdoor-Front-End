@@ -75,7 +75,8 @@ export class SignupPage implements OnInit {
   {
     localStorage.setItem('formdata', JSON.stringify(form.value));
     console.log(JSON.parse(localStorage.getItem('formdata')));
-  }
+    this.router.navigate(['/register'])
+  };
 
   register(form: { value: any; }) {
     this.http.post("http://127.0.0.1:8000/seeker/sign-up/", form.value).subscribe(
