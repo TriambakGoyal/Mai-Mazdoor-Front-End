@@ -1,4 +1,3 @@
-import { HomeTabPage } from './home-tab/home-tab.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,8 +17,6 @@ import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcont
     TabsPageRoutingModule
     ],
   declarations: [TabsPage],
-  bootstrap:    [ HomeTabPage ],
-  entryComponents: [ ModalcontentComponent ]
 
 })
 export class TabsPageModule {}

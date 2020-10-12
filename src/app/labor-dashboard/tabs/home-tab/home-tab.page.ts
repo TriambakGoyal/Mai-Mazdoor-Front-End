@@ -34,11 +34,10 @@ export interface IJob {
 export class HomeTabPage implements OnInit {
   
   job_list: IJob[];
-  locations:string="";
 
-  public filter_detail = {
-    job_name: '',
-    location: ''
+  filter_detail:any={
+    job_name:'',
+    location:''
   }
   
   //public items: any = [];
@@ -46,17 +45,18 @@ export class HomeTabPage implements OnInit {
   constructor(private http: HttpClient,
     private modalCtrl : ModalController    ) {  
   }
-
   
   async showModal(){
-    // console.log("opening modal"+this.filter_detail);
+    console.log(this.filter_detail);
     const modal =await this.modalCtrl.create({
       component:  ModalcontentComponent,
-      componentProps: { filter_detail: this.filter_detail },
+      componentProps: { filter_detail: this.filter_detail }
     });
     modal.onDidDismiss()
     .then((data) => {
-      this.filter_detail = data['data'];
+      this.filter_detail = data['data']; // Here's your selected user!
+      console.log(data['data']);
+      console.log(this.filter_detail);
   });
     await modal.present();
 

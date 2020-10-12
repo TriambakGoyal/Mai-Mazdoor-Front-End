@@ -7,32 +7,19 @@ import { Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./modalcontent.component.scss'],
 })
 export class ModalcontentComponent implements OnInit {
-
+  public filter_detail={
+    job_name: '',
+    location: ''
+  };
   constructor(private modalCtrl : ModalController) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   async close(){
     await this.modalCtrl.dismiss(this.filter_detail);
-    await this.modalCtrl.dismiss();
-
-    console.log(this.filter_detail);
-    
-  }
-
-// location:string="";
-
-  ngOnInit() {
-    // console.log("On initial"+this.filter_detail);
   }
   
-
-//   get_local(){
-//     localStorage.setItem('local',this.location);
-//     console.log(this.location);
-//   }
-@Input() public filter_detail={
-  job_name: '',
-  location: ''
-};
 //   @Output() passEntry: EventEmitter<any> = new EventEmitter();
 
 //   constructor(
