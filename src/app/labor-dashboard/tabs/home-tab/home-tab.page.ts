@@ -34,18 +34,29 @@ export interface IJob {
 export class HomeTabPage implements OnInit {
   
   job_list: IJob[];
+
+  filter_detail:any={
+    job_name:'',
+    location:''
+  }
   
   //public items: any = [];
   
   constructor(private http: HttpClient,private modalCtrl : ModalController) {
   }
   
-  
-  
   async showModal(){
+    console.log(this.filter_detail);
     const modal =await this.modalCtrl.create({
-      component:  ModalcontentComponent
+      component:  ModalcontentComponent,
+      componentProps: { filter_detail: this.filter_detail }
     });
+    modal.onDidDismiss()
+    .then((data) => {
+      this.filter_detail = data['data']; // Here's your selected user!
+      console.log(data['data']);
+      console.log(this.filter_detail);
+  });
     await modal.present();
     
   }

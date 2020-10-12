@@ -1,4 +1,6 @@
-<ion-searchbar ></ion-searchbar>
+<input [(ngModel)]="filter_detail.job_name" type="text">
+<input [(ngModel)]="filter_detail.location" type="text">
+
 <ion-button fill="clear" slot="end" (click)="close()">
   <ion-icon slot="icon-only" name="close"></ion-icon>
 </ion-button>

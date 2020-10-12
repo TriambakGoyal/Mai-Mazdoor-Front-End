@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../../../components/components.module';
+import { LocationPipe } from './../../../filter/location.pipe';
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,15 +14,17 @@ import { ModalController} from '@ionic/angular'
 import { async } from '@angular/core/testing';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 import { ExpandableComponent } from "src/app/components/expandable/expandable.component";
+import { JoblocationPipe } from 'src/app/joblocation.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeTabPageRoutingModule
+    HomeTabPageRoutingModule,
+  
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,LocationPipe,JoblocationPipe]
 })
 export class HomeTabPageModule {
 
