@@ -10,7 +10,7 @@ export interface IProfile{
   s_locailty: string,
   s_city: string,
   s_state: string,
-  s_skill: {
+  s_skills: {
     skill_id: string,
     skill_desc: string,
   }[],
@@ -27,12 +27,14 @@ export interface IProfile{
 export class SettingTabPage implements OnInit {
   profile: IProfile;
 
+  
+
   constructor(
     private http: HttpClient,private datePipe: DatePipe
   ) { }
 
   ngOnInit() {
-    var seeker_id=localStorage.getItem("id")
+    var seeker_id = localStorage.getItem("id");
     console.log("hello",seeker_id);
     this.http.get<IProfile>("http://127.0.0.1:8000/seeker/get-profile/"+seeker_id).subscribe(
       response => {
