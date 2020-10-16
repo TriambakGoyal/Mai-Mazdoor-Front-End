@@ -31,17 +31,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.12",
-<<<<<<< HEAD
-    "@angular/cli": "^9.1.12",
-    "@angular/compiler": "^9.1.12",
-    "@angular/compiler-cli": "^9.1.12",
-    "@angular/language-service": "^9.1.12",
-=======
     "@angular/cli": "~9.1.5",
     "@angular/compiler": "~9.1.6",
     "@angular/compiler-cli": "~9.1.6",
     "@angular/language-service": "~9.1.6",
->>>>>>> sreejit
     "@ionic/angular-toolkit": "^2.3.3",
     "@ionic/lab": "3.1.7",
     "@types/jasmine": "^3.5.14",
