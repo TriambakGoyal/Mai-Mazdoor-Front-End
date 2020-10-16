@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
 
     this.http.post<ILoginResponse>("http://127.0.0.1:8000/seeker/login/", form.value).subscribe(
       res => {
-        console.log(res.id);
+        console.log(res);
         localStorage.setItem("id", (res.id).toString());
       },
       (err) => {

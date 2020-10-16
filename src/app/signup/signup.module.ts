@@ -19,7 +19,6 @@ import { ComponentsModule } from '../components/components.module';
     IonicModule,
     SignupPageRoutingModule,
     RegisterPageModule,
-    ComponentsModule
 
   ],
   declarations: [SignupPage,AvtarComponent]
