@@ -1,4 +1,3 @@
-import { ComponentsModule } from './../../../components/components.module';
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

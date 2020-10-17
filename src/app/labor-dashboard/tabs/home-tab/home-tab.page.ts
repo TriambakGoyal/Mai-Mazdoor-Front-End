@@ -36,14 +36,15 @@ export class HomeTabPage implements OnInit {
   job_list: IJob[];
 
   filter_detail:any={
-    job_name:'',
-    location:''
-  }
+    skill:[],
+    location:'',
+    job_date:'',
+  };
   
   //public items: any = [];
   
   constructor(private http: HttpClient,
-    private modalCtrl : ModalController    ) {  
+    private modalCtrl : ModalController) {  
   }
   
   async showModal(){

@@ -10,10 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StartDatePipe } from './start-date.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent, StartDatePipe,],
   entryComponents: [],
   imports: [
     BrowserModule,
