@@ -14,7 +14,7 @@ import { StartDatePipe } from './start-date.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, StartDatePipe,],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

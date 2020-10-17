@@ -72,6 +72,7 @@ export class ModalcontentComponent implements OnInit {
   // }
 
   async close(){
+    this.filter_detail.job_date=this.datepipe.transform(this.filter_detail.job_date,"yyyy-MM-dd");
     await this.modalCtrl.dismiss(this.filter_detail);
     console.log(this.filter_detail);
   }

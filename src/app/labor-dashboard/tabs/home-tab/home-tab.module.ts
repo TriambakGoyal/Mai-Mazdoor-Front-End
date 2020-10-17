@@ -13,6 +13,7 @@ import { async } from '@angular/core/testing';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 import { ExpandableComponent } from "src/app/components/expandable/expandable.component";
 import { JoblocationPipe } from 'src/app/joblocation.pipe';
+import { StartDatePipe } from 'src/app/start-date.pipe';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { JoblocationPipe } from 'src/app/joblocation.pipe';
     HomeTabPageRoutingModule,
   
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe,StartDatePipe]
 })
 export class HomeTabPageModule {
 
