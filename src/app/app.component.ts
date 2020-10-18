@@ -13,13 +13,15 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private _platform          : Platform, 
     private _translate         : TranslateService
-  ) {this._platform
+  ) 
+  {this._platform
     .ready()
     .then(() => 
     {
