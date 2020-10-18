@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 import { __values } from 'tslib';
 
+import { TranslateConfigService } from 'src/app/translate-config.service';
+
 export interface IJob {
   job_id: number,
   contractor: {
@@ -32,6 +34,8 @@ export interface IJob {
   styleUrls: ['./home-tab.page.scss'],
 })
 export class HomeTabPage implements OnInit {
+
+  selectedLanguage:string;
   
   job_list: IJob[];
 
@@ -43,7 +47,16 @@ export class HomeTabPage implements OnInit {
   //public items: any = [];
   
   constructor(private http: HttpClient,
-    private modalCtrl : ModalController    ) {  
+    private modalCtrl : ModalController, private translateConfigService: TranslateConfigService   ) { 
+      this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+    localStorage.setItem("language",this.selectedLanguage); 
+  }
+
+  
+  languageChanged(){
+    this.translateConfigService.setLanguage(this.selectedLanguage);
+    localStorage.setItem("language",this.selectedLanguage);
+    console.log(localStorage.getItem("language"));
   }
   
   async showModal(){
