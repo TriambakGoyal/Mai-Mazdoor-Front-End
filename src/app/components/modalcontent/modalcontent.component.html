@@ -31,6 +31,14 @@
         <ion-datetime displayFormat="D MMM YYYY" [min]="min" [max]="max" name="s_dob" #userDOB="ngModel" [(ngModel)]="filter_detail.job_date" ngModel required></ion-datetime>
       </ion-item>
     </ion-row>
+    <ion-row class='ion-padding ion-margin'>
+      <ion-col>
+        <div style="display:flex; justify-content: space-around;margin-bottom:15px">
+         <button (click)="clear()" class="actionbutton"><p style="font-weight: 500;color:black; margin:0px 0px">Clear Filters</p></button>
+          </div>
+      </ion-col>
+     
+    </ion-row>
  
   </ion-grid>
       

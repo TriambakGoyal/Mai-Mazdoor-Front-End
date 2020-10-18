@@ -55,14 +55,11 @@ export class ModalcontentComponent implements OnInit {
     this.http.get<ISkill[]>("http://127.0.0.1:8000/seeker/get-skills/").subscribe(
       response => {
           this.filter_list = response;
-          console.log(this.filter_list)
+          console.log("After opening modal",this.filter_list)
         
         });
-        console.log(this.today);
         this.min=this.datepipe.transform(this.today,"yyyy-MM-dd");
         this.max=this.datepipe.transform(this.today.setMonth(this.today.getMonth() + 2),"yyyy-MM-dd")
-        console.log(this.min," ",this.max);
-
 
   
 
@@ -74,7 +71,13 @@ export class ModalcontentComponent implements OnInit {
   async close(){
     this.filter_detail.job_date=this.datepipe.transform(this.filter_detail.job_date,"yyyy-MM-dd");
     await this.modalCtrl.dismiss(this.filter_detail);
-    console.log(this.filter_detail);
+    console.log("After closing modal",this.filter_detail);
+  }
+
+  clear(){
+    this.filter_detail.job_date=null;
+    this.filter_detail.location="";
+    this.filter_detail.skill=[];
   }
   
 //   @Output() passEntry: EventEmitter<any> = new EventEmitter();

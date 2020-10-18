@@ -9,9 +9,9 @@ export class JoblocationPipe implements PipeTransform {
 
     // console.log(value);
 
-    if(u_location==="")
+    if(u_location=="")
     {
-      console.log(u_location);
+      console.log("No location");
       return value;
     }
 

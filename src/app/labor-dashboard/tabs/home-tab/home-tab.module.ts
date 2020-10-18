@@ -1,3 +1,4 @@
+import { JobSkillPipe } from './../../../job-skill.pipe';
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,7 @@ import { StartDatePipe } from 'src/app/start-date.pipe';
     HomeTabPageRoutingModule,
   
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe,StartDatePipe]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe,StartDatePipe,JobSkillPipe]
 })
 export class HomeTabPageModule {
 
