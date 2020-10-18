@@ -40,9 +40,10 @@ export class HomeTabPage implements OnInit {
   job_list: IJob[];
 
   filter_detail:any={
-    job_name:'',
-    location:''
-  }
+    skill:[],
+    location:'',
+    job_date:'',
+  };
   
   //public items: any = [];
   
@@ -68,8 +69,8 @@ export class HomeTabPage implements OnInit {
     modal.onDidDismiss()
     .then((data) => {
       this.filter_detail = data['data']; // Here's your selected user!
-      console.log(data['data']);
-      console.log(this.filter_detail);
+      console.log("coming back to home page from modal",data['data']);
+      // console.log(this.filter_detail);
   });
     await modal.present();
 
@@ -77,11 +78,10 @@ export class HomeTabPage implements OnInit {
   ngOnInit() {
     
     var seeker_id = localStorage.getItem("id");
-    console.log("hello",seeker_id);
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/"+seeker_id).subscribe(
     response => {
         this.job_list = response;
-        console.log(this.job_list)
+        console.log("At opening of home page",this.job_list)
       
       });
 

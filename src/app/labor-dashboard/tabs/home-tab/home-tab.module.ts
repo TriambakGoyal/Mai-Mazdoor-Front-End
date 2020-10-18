@@ -1,4 +1,4 @@
-
+import { JobSkillPipe } from './../../../job-skill.pipe';
 import { AvtarComponent } from './../../../components/avtar/avtar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +14,7 @@ import { async } from '@angular/core/testing';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 import { ExpandableComponent } from "src/app/components/expandable/expandable.component";
 import { JoblocationPipe } from 'src/app/joblocation.pipe';
+import { StartDatePipe } from 'src/app/start-date.pipe';
 
 import { TranslateModule } from "@ngx-translate/core";
 
@@ -25,7 +26,7 @@ import { TranslateModule } from "@ngx-translate/core";
     HomeTabPageRoutingModule,
     TranslateModule
   ],
-  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe]
+  declarations: [HomeTabPage,AvtarComponent, ModalcontentComponent,ExpandableComponent,JoblocationPipe,StartDatePipe,JobSkillPipe]
 })
 export class HomeTabPageModule {
 

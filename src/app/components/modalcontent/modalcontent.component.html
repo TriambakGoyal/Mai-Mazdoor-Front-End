@@ -1,15 +1,60 @@
-<<<<<<< HEAD
-<!-- 
-<input [(ngModel)]="filter_detail.job_name" type="text">
-<input [(ngModel)]="filter_detail.location" type="number"> -->
-=======
-<input [(ngModel)]="filter_detail.job_name" type="text">
-<input [(ngModel)]="filter_detail.location" type="text">
+<!-- <input [(ngModel)]="filter_detail.job_name" type="text"> -->  
+<ion-content class="background">
+  <ion-grid class="ion-no-margin" style="margin-top: 30%;">
+    <ion-row class='ion-padding ion-margin justify-content-center'>
+      <ion-title style="text-align: center;">Filter the List</ion-title>
+    </ion-row>
+    <ion-row class='ion-padding ion-margin'>
+      <ion-item color='light' class="input-fields" style="width: 100%;">
+        <ion-label class="input-fields-label"><ion-icon name="build"></ion-icon>&nbsp;&nbsp;Work Skill</ion-label>
+        <ion-select style="height: 64px;" interface="alert" multiple="true" placeholder="Select" name="s_skill" [(ngModel)]="filter_detail.skill" ngModel required>
+          <ion-select-option value="{{skill.skill_desc}}" *ngFor="let skill of filter_list">{{skill.skill_desc}}</ion-select-option>
+        </ion-select>
+      </ion-item> 
+    </ion-row>
+    <ion-row class='ion-padding ion-margin'>
+      <ion-item color='light' class="input-fields" style="width: 100%;">
+        <ion-label   position="floating" class="input-fields-label"><ion-icon name="location"></ion-icon>&nbsp;&nbsp;City</ion-label>
+        <ion-select style="height: 40px;"  interface="alert"  name="s_city" ngModel required [(ngModel)]="filter_detail.location" #userCity="ngModel">
+          <ion-select-option [value]="local.city"  *ngFor="let local of Location" >{{ local.city }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row class='ion-padding ion-margin'> 
+      <ion-item color='light' class="input-fields" style="width: 100%;">
+        <ion-label position="floating"class="input-fields-label" >
+          <ion-icon name="calendar" class="ion-no-padding ion-no-margin ion-no-border">
+      
+          </ion-icon>
+          &nbsp;&nbsp;Job Start Date
+        </ion-label>
+        <ion-datetime displayFormat="D MMM YYYY" [min]="min" [max]="max" name="s_dob" #userDOB="ngModel" [(ngModel)]="filter_detail.job_date" ngModel required></ion-datetime>
+      </ion-item>
+    </ion-row>
+    <ion-row class='ion-padding ion-margin'>
+      <ion-col>
+        <div style="display:flex; justify-content: space-around;margin-bottom:15px">
+         <button (click)="clear()" class="actionbutton"><p style="font-weight: 500;color:black; margin:0px 0px">Clear Filters</p></button>
+          </div>
+      </ion-col>
+     
+    </ion-row>
+ 
+  </ion-grid>
+      
 
->>>>>>> sreejit
-<ion-button fill="clear" slot="end" (click)="close()">
+    
+</ion-content>
+<ion-button fill="clear" (click)="close()" slot="end" >
   <ion-icon slot="icon-only" name="close"></ion-icon>
 </ion-button>
+
+
+
+
+
+
+
 <!-- <div class="modal-header">
   <h4 class="modal-title" id="modal-basic-title">Simple modal</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">

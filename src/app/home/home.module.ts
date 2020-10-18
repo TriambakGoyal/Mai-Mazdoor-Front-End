@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { ComponentsModule } from '../components/components.module';
 import { SlideComponent } from '../components/slide/slide.component';
 import { RouterModule } from '@angular/router';
 
@@ -23,6 +22,5 @@ import { RouterModule } from '@angular/router';
 
 export class HomePageModule {
   // @ViewChild("show") divView: ElementRef;
- 
 
 }
