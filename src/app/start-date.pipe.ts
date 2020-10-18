@@ -9,7 +9,7 @@ export class StartDatePipe implements PipeTransform {
     
     if(job_date==null)
     {
-      console.log("No date")
+      // console.log("No date")
       return value;
     }
 
@@ -23,8 +23,8 @@ export class StartDatePipe implements PipeTransform {
       
         if(job_d>=job_date)
       {
-        console.log("filter date",job_date);
-        console.log("job_date",value[i].job_start_date);
+        // console.log("filter date",job_date);
+        // console.log("job_date",value[i].job_start_date);
 
         joblist.push(value[i]);
       }

@@ -14,10 +14,10 @@ ion-content{
 ion-card{
   border-style: none; 
   // background : #f4f5f8;
-  background: rgba(0,0,0,0.1);
-  box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  background: rgba(255,255,255,0.7);
+  // box-shadow:10px 10px 10px 0px rgba($color: #000000, $alpha: 0.2) !important;
+  // border-top-left-radius: 20px;
+  // border-bottom-right-radius: 20px;
 }
 ion-item{
   --background:rgba(0,0,0,0);

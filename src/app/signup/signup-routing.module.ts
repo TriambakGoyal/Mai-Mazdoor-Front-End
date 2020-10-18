@@ -1,4 +1,3 @@
-import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { pathToFileURL } from 'url';
@@ -23,7 +22,8 @@ const routes: Routes = [
     path:'',
     redirectTo:'',
     pathMatch: "full"
-  },  {
+  },
+  {
     path: 'profile-pic',
     loadChildren: () => import('./profile-pic/profile-pic.module').then( m => m.ProfilePicPageModule)
   }

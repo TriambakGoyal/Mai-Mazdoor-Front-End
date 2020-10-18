@@ -55,7 +55,7 @@ export class ModalcontentComponent implements OnInit {
     this.http.get<ISkill[]>("http://127.0.0.1:8000/seeker/get-skills/").subscribe(
       response => {
           this.filter_list = response;
-          console.log("After opening modal",this.filter_list)
+          // console.log("After opening modal",this.filter_list)
         
         });
         this.min=this.datepipe.transform(this.today,"yyyy-MM-dd");
@@ -64,9 +64,6 @@ export class ModalcontentComponent implements OnInit {
   
 
   }
-  // void {
-  //   throw new Error('Method not implemented.');
-  // }
 
   async close(){
     this.filter_detail.job_date=this.datepipe.transform(this.filter_detail.job_date,"yyyy-MM-dd");
@@ -80,19 +77,6 @@ export class ModalcontentComponent implements OnInit {
     this.filter_detail.skill=[];
   }
   
-//   @Output() passEntry: EventEmitter<any> = new EventEmitter();
 
-//   constructor(
-//     public activeModal: NgbActiveModal
-//   ) { }
-
-//   ngOnInit() {
-//     console.log(this.filter_detail);
-//   }
-
-//   passBack() {
-//     this.passEntry.emit(this.filter_detail);
-//     this.activeModal.close(this.filter_detail);
-//   }
 
 }
