@@ -9,7 +9,7 @@ export class JobSkillPipe implements PipeTransform {
 
     if(skills.length == 0)
     {
-      console.log("No Skill")
+      // console.log("No Skill")
       return value;
     }
 
@@ -22,8 +22,8 @@ export class JobSkillPipe implements PipeTransform {
 
         if(value[i].job_skill.skill_desc == skills[j])
         {
-          console.log('filter',skills[j]);
-          console.log('skills',value[i].job_skill.skill_desc)
+          // console.log('filter',skills[j]);
+          // console.log('skills',value[i].job_skill.skill_desc)
           joblist.push(value[i]);
         } 
       }

@@ -11,7 +11,7 @@ export class JoblocationPipe implements PipeTransform {
 
     if(u_location=="")
     {
-      console.log("No location");
+      // console.log("No location");
       return value;
     }
 
@@ -20,8 +20,8 @@ export class JoblocationPipe implements PipeTransform {
     for(let i=0;i<value.length;i++)
     {
       var job_loc=value[i].contractor.contractor_location;
-      console.log(value[i].contractor.contractor_location);
-      console.log(value[i]);
+      // console.log(value[i].contractor.contractor_location);
+      // console.log(value[i]);
     
       
         if(job_loc==u_location)

@@ -61,7 +61,7 @@ export class HomeTabPage implements OnInit {
   }
   
   async showModal(){
-    console.log(this.filter_detail);
+    // console.log(this.filter_detail);
     const modal =await this.modalCtrl.create({
       component:  ModalcontentComponent,
       componentProps: { filter_detail: this.filter_detail }
@@ -69,7 +69,7 @@ export class HomeTabPage implements OnInit {
     modal.onDidDismiss()
     .then((data) => {
       this.filter_detail = data['data']; // Here's your selected user!
-      console.log("coming back to home page from modal",data['data']);
+      // console.log("coming back to home page from modal",data['data']);
       // console.log(this.filter_detail);
   });
     await modal.present();
@@ -81,7 +81,7 @@ export class HomeTabPage implements OnInit {
     this.http.get<IJob[]>("http://127.0.0.1:8000/jobs/get-all-jobs/"+seeker_id).subscribe(
     response => {
         this.job_list = response;
-        console.log("At opening of home page",this.job_list)
+        // console.log("At opening of home page",this.job_list)
       
       });
 
