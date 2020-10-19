@@ -6,6 +6,15 @@
           <app-avtar>
           </app-avtar>
         </ion-col>
+        <ion-col><ion-list>
+          <ion-item>
+            <ion-select placeholder="Select One" [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+              <ion-select-option value="en">English</ion-select-option>
+              <ion-select-option value="hi">हिंदी</ion-select-option>
+              <ion-select-option value="bn">বাংলা</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list></ion-col>
         <ion-col>
           <ion-button (click)="showModal()" fill="clear" style="height:100%; float:right;" >
             <ion-icon name="filter" style="color: black;"></ion-icon>
@@ -49,6 +58,7 @@
     <ion-row>
       <ion-col size-md="5" offset-md="4">
         <div class="feeds">
+          <!-- <p>{{ 'HOME.title' | translate:params }}</p> -->
           <!-- <div><input type="text" [(ngModel)]="locations"></div> -->
           <div class="accordion" *ngIf="job_list?.length">
             <div class="accordion-item" *ngFor="let job of job_list | joblocation : filter_detail.location | startDate:filter_detail.job_date | jobSkill:filter_detail.skill ; let offset = index">

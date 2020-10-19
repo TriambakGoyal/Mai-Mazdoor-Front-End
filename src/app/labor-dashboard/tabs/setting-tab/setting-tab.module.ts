@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { SettingTabPageRoutingModule } from './setting-tab-routing.module';
+import { TranslateModule } from "@ngx-translate/core";
 
 import { SettingTabPage } from './setting-tab.page';
 
@@ -15,6 +16,7 @@ import { SettingTabPage } from './setting-tab.page';
     FormsModule,
     IonicModule,
     SettingTabPageRoutingModule,
+    TranslateModule
   ],
   declarations: [SettingTabPage,AvtarComponent,],
   providers:[DatePipe]

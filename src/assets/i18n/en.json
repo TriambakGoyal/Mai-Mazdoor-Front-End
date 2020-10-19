@@ -1,9 +1,19 @@
 {
-    "HOME": {
-        "title": "Hello world",
-        "text": "This is random text to show translation in application"
+    "TABS": {
+        "home": "Home",
+        "work": "Work",
+        "profile": "Profile"
+    },
+    "WORK":{
+        "head": "Jobs",
+        "message": "No Jobs Appointed"
     },
     "PROFILE":{
-
+        "logout": "LOGOUT",
+        "g": "Gender",
+        "dob": "Date of Birth",
+        "mobile": "Mobile No.",
+        "skill": "Skills",
+        "b_update": "UPDATE PROFILE"
     }
 }
