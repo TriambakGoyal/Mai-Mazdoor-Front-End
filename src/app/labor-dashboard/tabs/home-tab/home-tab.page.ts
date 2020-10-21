@@ -84,7 +84,6 @@ export class HomeTabPage implements OnInit {
         // console.log("At opening of home page",this.job_list)
       
       });
-
   }
 
   toogleAccordion() {
@@ -104,8 +103,5 @@ export class HomeTabPage implements OnInit {
 
   items.forEach(item => item.addEventListener('click', toggleAccordion));
   }
-
-
-
 
 }

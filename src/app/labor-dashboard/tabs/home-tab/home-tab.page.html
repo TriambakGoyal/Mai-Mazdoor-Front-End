@@ -6,16 +6,16 @@
           <app-avtar>
           </app-avtar>
         </ion-col>
-        <ion-col><ion-list>
-          <ion-item>
-            <ion-select placeholder="Select One" [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+        <ion-col style="display: flex;justify-content: flex-end; justify-items:center;">
+          <ion-item id="language" lines="none"  detail="false" style="display:flex;justify-items:baseline;background: rgba(255,255,255,0);" class="ion-no-margin ion-no-padding ion-no-border">
+            <ion-icon name="language" style="color: black; height:100%;width:25px"></ion-icon>&nbsp;
+            <ion-select [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()" style="height: 100%;">
+
               <ion-select-option value="en">English</ion-select-option>
               <ion-select-option value="hi">हिंदी</ion-select-option>
               <ion-select-option value="bn">বাংলা</ion-select-option>
             </ion-select>
           </ion-item>
-        </ion-list></ion-col>
-        <ion-col>
           <ion-button (click)="showModal()" fill="clear" style="height:100%; float:right;" >
             <ion-icon name="filter" style="color: black;"></ion-icon>
 
@@ -63,7 +63,7 @@
           <div class="accordion" *ngIf="job_list?.length">
             <div class="accordion-item" *ngFor="let job of job_list | joblocation : filter_detail.location | startDate:filter_detail.job_date | jobSkill:filter_detail.skill ; let offset = index">
               <div style="display: flex;"><ion-icon name="location" style="height: 28px;"></ion-icon>&nbsp;&nbsp;
-                <h3 style="margin-bottom: 0px;">{{job.contractor.contractor_location}}</h3>
+                <h3 style="margin-bottom: 0px; margin-top:0px">{{job.contractor.contractor_location}}</h3>
               </div>
               <br>
               <button id="accordion-button-{{offset}}"  aria-expanded="false" (click)="toogleAccordion()" >

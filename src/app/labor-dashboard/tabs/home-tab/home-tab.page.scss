@@ -119,7 +119,14 @@ ion-content{
     --background:rgba(255,255,255,0); 
   }
 
+#language{
+  --background:rgba(255,255,255,0); 
+  --highlight-height:0;
+  height: fit-content;
+  padding-top: 10px;
   
+
+}
 ion-card {
     border-radius: 15px;
   }
