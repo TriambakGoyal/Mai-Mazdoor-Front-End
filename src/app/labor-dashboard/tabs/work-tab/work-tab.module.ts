@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { WorkTabPageRoutingModule } from './work-tab-routing.module';
 
+import { TranslateModule } from "@ngx-translate/core";
 import { WorkTabPage } from './work-tab.page';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { WorkTabPage } from './work-tab.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    WorkTabPageRoutingModule
+    WorkTabPageRoutingModule,
+    TranslateModule
   ],
   declarations: [WorkTabPage,ExpandableComponent,AvtarComponent]
 })

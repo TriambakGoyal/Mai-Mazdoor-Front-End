@@ -1,9 +1,19 @@
 {
-    "HOME": {
-        "title": "Hello world",
-        "text": "This is random text to show translation in application"
+    "TABS": {
+        "home": "घर",
+        "work": "काम",
+        "profile": "प्रोफ़ाइल"
+    },
+    "WORK":{
+        "head": "नौकरियां",
+        "message": "कोई नौकरी नहीं मिली"
     },
     "PROFILE":{
-
+        "logout": "लॉग आउट",
+        "g": "लिंग",
+        "dob": "जन्म की तारीख",
+        "mobile": "फ़ोन नंबर",
+        "skill": "कौशल",
+        "b_update": "प्रोफ़ाइल अपडेट करें"
     }
 }

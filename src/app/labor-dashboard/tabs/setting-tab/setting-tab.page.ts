@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { TranslateConfigService } from 'src/app/translate-config.service';
 
 export interface IProfile{
   s_name: string,
@@ -29,9 +30,9 @@ export class SettingTabPage implements OnInit {
 
   
 
-  constructor(
+  constructor(private translateConfigService: TranslateConfigService,
     private http: HttpClient,private datePipe: DatePipe
-  ) { }
+  ) { this.translateConfigService.setLanguage(localStorage.getItem("language"));}
 
   ngOnInit() {
     var seeker_id = localStorage.getItem("id");

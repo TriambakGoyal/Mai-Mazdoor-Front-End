@@ -9,12 +9,15 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 import { ModalcontentComponent } from 'src/app/components/modalcontent/modalcontent.component';
 
+import { TranslateModule } from "@ngx-translate/core";
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    TranslateModule
     ],
   declarations: [TabsPage],
 

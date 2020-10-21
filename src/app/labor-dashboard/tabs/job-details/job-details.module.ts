@@ -8,6 +8,7 @@ import { JobDetailsPageRoutingModule } from './job-details-routing.module';
 
 import { JobDetailsPage } from './job-details.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
